@@ -27,6 +27,10 @@ public struct TickDataResult: Codable {
             }
         }
     
+    public init(array: [[TickData]]) {
+        self.array = array
+    }
+    
     public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
             let pairs = container.allKeys

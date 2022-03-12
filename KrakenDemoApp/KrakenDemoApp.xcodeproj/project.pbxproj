@@ -53,6 +53,13 @@
 		244229A427DCD953002B4F85 /* LoadOHLCDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A127DCD953002B4F85 /* LoadOHLCDataUseCase.swift */; };
 		244229A527DCD953002B4F85 /* LoadTickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A227DCD953002B4F85 /* LoadTickerUseCase.swift */; };
 		244229A727DCD9F4002B4F85 /* KrakenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A627DCD9F4002B4F85 /* KrakenRepository.swift */; };
+		244229AA27DCDB2B002B4F85 /* XCTestCase-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A927DCDB2B002B4F85 /* XCTestCase-Ext.swift */; };
+		244229AC27DCDB87002B4F85 /* KrakenAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229AB27DCDB87002B4F85 /* KrakenAPIMock.swift */; };
+		244229AE27DCDDF0002B4F85 /* KrakenRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229AD27DCDDF0002B4F85 /* KrakenRepositoryMock.swift */; };
+		244229B027DCE724002B4F85 /* KrakenRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229AF27DCE724002B4F85 /* KrakenRepositoryStub.swift */; };
+		244229B227DCE994002B4F85 /* KrakenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B127DCE993002B4F85 /* KrakenRepositoryTests.swift */; };
+		244229B427DCEDE6002B4F85 /* KrakenAPIStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B327DCEDE6002B4F85 /* KrakenAPIStub.swift */; };
+		244229B627DCEE26002B4F85 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B527DCEE26002B4F85 /* StubData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +129,13 @@
 		244229A127DCD953002B4F85 /* LoadOHLCDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadOHLCDataUseCase.swift; sourceTree = "<group>"; };
 		244229A227DCD953002B4F85 /* LoadTickerUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTickerUseCase.swift; sourceTree = "<group>"; };
 		244229A627DCD9F4002B4F85 /* KrakenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepository.swift; sourceTree = "<group>"; };
+		244229A927DCDB2B002B4F85 /* XCTestCase-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase-Ext.swift"; sourceTree = "<group>"; };
+		244229AB27DCDB87002B4F85 /* KrakenAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenAPIMock.swift; sourceTree = "<group>"; };
+		244229AD27DCDDF0002B4F85 /* KrakenRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepositoryMock.swift; sourceTree = "<group>"; };
+		244229AF27DCE724002B4F85 /* KrakenRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepositoryStub.swift; sourceTree = "<group>"; };
+		244229B127DCE993002B4F85 /* KrakenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepositoryTests.swift; sourceTree = "<group>"; };
+		244229B327DCEDE6002B4F85 /* KrakenAPIStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenAPIStub.swift; sourceTree = "<group>"; };
+		244229B527DCEE26002B4F85 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +368,7 @@
 		2442294827DCADCD002B4F85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				244229A827DCDB2B002B4F85 /* Utils */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,6 +407,9 @@
 		2442294D27DCAE18002B4F85 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				244229AD27DCDDF0002B4F85 /* KrakenRepositoryMock.swift */,
+				244229AF27DCE724002B4F85 /* KrakenRepositoryStub.swift */,
+				244229B127DCE993002B4F85 /* KrakenRepositoryTests.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -399,6 +417,9 @@
 		2442294E27DCAE26002B4F85 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				244229AB27DCDB87002B4F85 /* KrakenAPIMock.swift */,
+				244229B327DCEDE6002B4F85 /* KrakenAPIStub.swift */,
+				244229B527DCEE26002B4F85 /* StubData.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -506,6 +527,14 @@
 				2442299827DCD3BE002B4F85 /* String+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		244229A827DCDB2B002B4F85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				244229A927DCDB2B002B4F85 /* XCTestCase-Ext.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -686,7 +715,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244229B427DCEDE6002B4F85 /* KrakenAPIStub.swift in Sources */,
+				244229B627DCEE26002B4F85 /* StubData.swift in Sources */,
+				244229B027DCE724002B4F85 /* KrakenRepositoryStub.swift in Sources */,
+				244229AC27DCDB87002B4F85 /* KrakenAPIMock.swift in Sources */,
+				244229AA27DCDB2B002B4F85 /* XCTestCase-Ext.swift in Sources */,
 				2442292127DCA293002B4F85 /* KrakenDemoAppTests.swift in Sources */,
+				244229AE27DCDDF0002B4F85 /* KrakenRepositoryMock.swift in Sources */,
+				244229B227DCE994002B4F85 /* KrakenRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
