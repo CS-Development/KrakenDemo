@@ -49,6 +49,10 @@
 		2442299B27DCD66C002B4F85 /* TradingAssetPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */; };
 		2442299D27DCD697002B4F85 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299C27DCD697002B4F85 /* Ticker.swift */; };
 		2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299E27DCD6BC002B4F85 /* TickData.swift */; };
+		244229A327DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A027DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift */; };
+		244229A427DCD953002B4F85 /* LoadOHLCDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A127DCD953002B4F85 /* LoadOHLCDataUseCase.swift */; };
+		244229A527DCD953002B4F85 /* LoadTickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A227DCD953002B4F85 /* LoadTickerUseCase.swift */; };
+		244229A727DCD9F4002B4F85 /* KrakenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229A627DCD9F4002B4F85 /* KrakenRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingAssetPair.swift; sourceTree = "<group>"; };
 		2442299C27DCD697002B4F85 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		2442299E27DCD6BC002B4F85 /* TickData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickData.swift; sourceTree = "<group>"; };
+		244229A027DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTradingAssetPairsUseCase.swift; sourceTree = "<group>"; };
+		244229A127DCD953002B4F85 /* LoadOHLCDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadOHLCDataUseCase.swift; sourceTree = "<group>"; };
+		244229A227DCD953002B4F85 /* LoadTickerUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTickerUseCase.swift; sourceTree = "<group>"; };
+		244229A627DCD9F4002B4F85 /* KrakenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +273,7 @@
 		2442293F27DCABE9002B4F85 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				244229A627DCD9F4002B4F85 /* KrakenRepository.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -280,6 +289,9 @@
 		2442294127DCAC19002B4F85 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				244229A127DCD953002B4F85 /* LoadOHLCDataUseCase.swift */,
+				244229A227DCD953002B4F85 /* LoadTickerUseCase.swift */,
+				244229A027DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -626,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244229A727DCD9F4002B4F85 /* KrakenRepository.swift in Sources */,
 				2442295B27DCB4B7002B4F85 /* View+Ext.swift in Sources */,
 				2442296C27DCB8C1002B4F85 /* BalancesAssembler.swift in Sources */,
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
@@ -652,6 +665,7 @@
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
+				244229A327DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift in Sources */,
 				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
 				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
 				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
@@ -662,6 +676,8 @@
 				2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */,
 				2442298827DCC509002B4F85 /* NavigationHandler.swift in Sources */,
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
+				244229A527DCD953002B4F85 /* LoadTickerUseCase.swift in Sources */,
+				244229A427DCD953002B4F85 /* LoadOHLCDataUseCase.swift in Sources */,
 				2442297527DCBB29002B4F85 /* KrakenHomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
