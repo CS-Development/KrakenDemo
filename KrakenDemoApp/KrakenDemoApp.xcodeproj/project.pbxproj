@@ -14,6 +14,7 @@
 		2442292127DCA293002B4F85 /* KrakenDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292027DCA293002B4F85 /* KrakenDemoAppTests.swift */; };
 		2442292B27DCA293002B4F85 /* KrakenDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292A27DCA293002B4F85 /* KrakenDemoAppUITests.swift */; };
 		2442292D27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292C27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift */; };
+		2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		2442292627DCA293002B4F85 /* KrakenDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KrakenDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2442292A27DCA293002B4F85 /* KrakenDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenDemoAppUITests.swift; sourceTree = "<group>"; };
 		2442292C27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompositionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		2442293B27DCAB60002B4F85 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
+				2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */,
 			);
 			path = CompositionRoot;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			files = (
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
+				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import SwiftUI
 struct KrakenDemoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            KrakenHomeView()
+            AppCompositionRoot.start
         }
     }
 }
