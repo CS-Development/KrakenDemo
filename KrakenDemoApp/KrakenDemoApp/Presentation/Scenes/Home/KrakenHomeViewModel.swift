@@ -14,13 +14,14 @@ final class KrakenHomeViewModel: ObservableObject {
     
     public let pairsCase: LoadTradingAssetPairsUseCaseType
     public let tickerCase: LoadTickerUseCaseType
+    public var selectedPair: String? = nil
     
     private let timer = Timer.publish(
             every: 60, tolerance: 0.5,
             on: .main, in: .common
         )
         .autoconnect()
-        .merge(with: Just(Date()))
+        //.merge(with: Just(Date()))
     private var cancelBag = Set<AnyCancellable>()
     
     // MARK: -  Input
@@ -49,55 +50,71 @@ final class KrakenHomeViewModel: ObservableObject {
         let output = Output()
 
         // map input and use cases to output
+        self.pairsCase.execute()
+            .sink { completion in
+                // TODO
+            } receiveValue: { pairs in
+                output.pairs = pairs
+                for pair in pairs {
+                    self.tickerCase.execute(pairKey: pair.key)
+                        .sink { _ in
+                            
+                        } receiveValue: { tickerDictionary in
+                            output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                                newTicker
+                            }
+                        }
+                        .store(in: &self.cancelBag)
+                }
+                
+            }
+            .store(in: &self.cancelBag)
         
         timer.sink { _ in
-            self.pairsCase.execute()
-                .sink { completion in
-                    // TODO
-                } receiveValue: { pairs in
-                    output.pairs = pairs
-                    for pair in pairs {
-                        self.tickerCase.execute(pairKey: pair.key)
-                            .sink { _ in
-                                
-                            } receiveValue: { tickerDictionary in
-                                output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                                    newTicker
-                                }
-                            }
-                            .store(in: &self.cancelBag)
+            if self.selectedPair != nil {
+                self.tickerCase.execute(pairKey: self.selectedPair!)
+                    .sink { _ in
+                        
+                    } receiveValue: { tickerDictionary in
+                        output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                            newTicker
+                        }
                     }
-                    
+                    .store(in: &self.cancelBag)
+            } else {
+                for pair in output.pairs {
+                    self.tickerCase.execute(pairKey: pair.key)
+                        .sink { _ in
+                            
+                        } receiveValue: { tickerDictionary in
+                            output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                                newTicker
+                            }
+                        }
+                        .store(in: &self.cancelBag)
                 }
-                .store(in: &self.cancelBag)
+            }
         }
         .store(in: &cancelBag)
         
         input.reloadTrigger.sink { _ in
-            self.pairsCase.execute()
-                .sink { completion in
-                    // TODO
-                } receiveValue: { pairs in
-                    output.pairs = pairs
-                    for pair in pairs {
-                        self.tickerCase.execute(pairKey: pair.key)
-                            .sink { _ in
-                                
-                            } receiveValue: { tickerDictionary in
-                                output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                                    newTicker
-                                }
-                            }
-                            .store(in: &self.cancelBag)
+            for pair in output.pairs {
+                self.tickerCase.execute(pairKey: pair.key)
+                    .sink { _ in
+                        
+                    } receiveValue: { tickerDictionary in
+                        output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                            newTicker
+                        }
                     }
-                    
-                }
-                .store(in: &self.cancelBag)
+                    .store(in: &self.cancelBag)
+            }
         }
         .store(in: &cancelBag)
         
         input.selectPair?
             .sink(receiveValue: { cellVm in
+                self.selectedPair = cellVm.name
                 print("pair \(cellVm.name) was selected")
                 self.navigationDirection = .forward(destination: .pairDetails(cellVm: cellVm), style: .push)
             })

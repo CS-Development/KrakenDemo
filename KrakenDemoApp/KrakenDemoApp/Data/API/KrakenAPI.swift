@@ -103,6 +103,7 @@ struct KrakenAPI: KrakenAPIType {
     func getOHLCData(pairKey: String) -> AnyPublisher<TickDataResult, Error> {
         var url = URL(string: baseURL)!.appendingPathComponent("OHLC")
         url.appendQueryItem(name: "pair", value: pairKey)
+        //url.appendQueryItem(name: "interval", value: "1")
         let publisher = URLSession.shared.dataTaskPublisher(for: url, cachedResponseOnError: true)
         return publisher
             .handleEvents(

@@ -34,10 +34,15 @@ struct KrakenHomeView: View {
         
         return NavigationView {
             allPairsList
+                .onAppear {
+                    print("reset selected pair")
+                    viewModel.selectedPair = nil
+                }
             .refreshable { reload.send() }
             .handleNavigation($viewModel.navigationDirection)
             .navigationBarHidden(true)
         }
+        
     }
     
 }
