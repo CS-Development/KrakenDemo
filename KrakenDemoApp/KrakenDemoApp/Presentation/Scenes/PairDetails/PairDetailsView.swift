@@ -36,9 +36,11 @@ struct PairDetailsView: View {
             }
             Divider()
             if !output.array.isEmpty {
-                ForEach(output.array as! [TickDataStruct]) { tickData in
-                    Text(tickData.close)
-                }
+//                ForEach(output.array as! [TickDataStruct]) { tickData in
+//                    Text(tickData.close)
+//                }
+                ChartView(tickDatas: output.array as! [TickDataStruct])
+                    .padding(.vertical)
             }
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
