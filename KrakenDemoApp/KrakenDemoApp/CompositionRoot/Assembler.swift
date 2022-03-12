@@ -11,7 +11,8 @@ protocol Assembler: AnyObject,
     KrakenHomeAssembler,
     TradeAssembler,
     BalancesAssembler,
-    AccountAssembler {
+    AccountAssembler,
+    PairDetailsAssembler {
     
 }
 

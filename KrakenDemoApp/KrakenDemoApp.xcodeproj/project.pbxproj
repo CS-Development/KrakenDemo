@@ -34,6 +34,13 @@
 		2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297827DCBBE2002B4F85 /* AccountViewModel.swift */; };
 		2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297A27DCBC10002B4F85 /* BalancesViewModel.swift */; };
 		2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297C27DCBC34002B4F85 /* TradeViewModel.swift */; };
+		2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297F27DCC3C0002B4F85 /* PairDetailsView.swift */; };
+		2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298127DCC3D5002B4F85 /* PairDetailsViewModel.swift */; };
+		2442298427DCC3EB002B4F85 /* PairDetailsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298327DCC3EB002B4F85 /* PairDetailsAssembler.swift */; };
+		2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298527DCC4E5002B4F85 /* NavigationDirection.swift */; };
+		2442298827DCC509002B4F85 /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298727DCC509002B4F85 /* NavigationHandler.swift */; };
+		2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298927DCC538002B4F85 /* NavigationDestination.swift */; };
+		2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +91,13 @@
 		2442297827DCBBE2002B4F85 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		2442297A27DCBC10002B4F85 /* BalancesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesViewModel.swift; sourceTree = "<group>"; };
 		2442297C27DCBC34002B4F85 /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
+		2442297F27DCC3C0002B4F85 /* PairDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDetailsView.swift; sourceTree = "<group>"; };
+		2442298127DCC3D5002B4F85 /* PairDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDetailsViewModel.swift; sourceTree = "<group>"; };
+		2442298327DCC3EB002B4F85 /* PairDetailsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDetailsAssembler.swift; sourceTree = "<group>"; };
+		2442298527DCC4E5002B4F85 /* NavigationDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDirection.swift; sourceTree = "<group>"; };
+		2442298727DCC509002B4F85 /* NavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHandler.swift; sourceTree = "<group>"; };
+		2442298927DCC538002B4F85 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +209,7 @@
 		2442293B27DCAB60002B4F85 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
+				2442298D27DCC593002B4F85 /* Navigation */,
 				2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */,
 				2442296527DCB7F4002B4F85 /* Assembler.swift */,
 			);
@@ -273,6 +288,7 @@
 				2442295D27DCB5C8002B4F85 /* Balances */,
 				2442295C27DCB5BF002B4F85 /* Trade */,
 				2442294F27DCAE58002B4F85 /* Home */,
+				2442297E27DCC385002B4F85 /* PairDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -280,6 +296,8 @@
 		2442294527DCAD95002B4F85 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				2442298527DCC4E5002B4F85 /* NavigationDirection.swift */,
+				2442298727DCC509002B4F85 /* NavigationHandler.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -417,6 +435,25 @@
 				2442297227DCB940002B4F85 /* TemplateAssembler.swift */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		2442297E27DCC385002B4F85 /* PairDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2442297F27DCC3C0002B4F85 /* PairDetailsView.swift */,
+				2442298127DCC3D5002B4F85 /* PairDetailsViewModel.swift */,
+				2442298327DCC3EB002B4F85 /* PairDetailsAssembler.swift */,
+			);
+			path = PairDetails;
+			sourceTree = "<group>";
+		};
+		2442298D27DCC593002B4F85 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2442298927DCC538002B4F85 /* NavigationDestination.swift */,
+				2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,18 +594,25 @@
 				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
 				2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */,
+				2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */,
 				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
 				2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */,
+				2442298427DCC3EB002B4F85 /* PairDetailsAssembler.swift in Sources */,
 				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
 				2442296827DCB84D002B4F85 /* KrakenHomeAssembler.swift in Sources */,
+				2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
 				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
+				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
 				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
+				2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
+				2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */,
+				2442298827DCC509002B4F85 /* NavigationHandler.swift in Sources */,
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
 				2442297527DCBB29002B4F85 /* KrakenHomeViewModel.swift in Sources */,
 			);

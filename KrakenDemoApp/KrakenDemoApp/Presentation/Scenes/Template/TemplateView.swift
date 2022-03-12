@@ -10,7 +10,6 @@ import SwiftUI
 struct TemplateView: View {
     
     @ObservedObject var viewModel: TemplateViewModel
-    @ObservedObject var input: TemplateViewModel.Input
     @ObservedObject var output: TemplateViewModel.Output
     
     init(viewModel: TemplateViewModel) {
@@ -18,7 +17,6 @@ struct TemplateView: View {
         
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
-        self.input = input
     }
     
     var body: some View {

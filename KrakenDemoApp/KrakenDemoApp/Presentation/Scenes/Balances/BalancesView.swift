@@ -10,7 +10,6 @@ import SwiftUI
 struct BalancesView: View {
     
     @ObservedObject var viewModel: BalancesViewModel
-    @ObservedObject var input: BalancesViewModel.Input
     @ObservedObject var output: BalancesViewModel.Output
     
     init(viewModel: BalancesViewModel) {
@@ -18,7 +17,6 @@ struct BalancesView: View {
         
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
-        self.input = input
     }
     
     var body: some View {

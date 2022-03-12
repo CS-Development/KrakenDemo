@@ -10,10 +10,13 @@ import Combine
 
 final class KrakenHomeViewModel: ObservableObject {
 
+    @Published var navigationDirection: NavigationDirection?
+    
     private var cancelBag = Set<AnyCancellable>()
     
     // Input
-    final class Input: ObservableObject {
+    struct Input {
+        var selectPair: AnyPublisher<Void, Never>? = nil
     }
     
     // Output
@@ -26,11 +29,19 @@ final class KrakenHomeViewModel: ObservableObject {
 //        self.useCase = useCase
 //    }
     
+    // MARK: - Input/Output redux transform
+    
     func transform(_ input: Input) -> Output {
         
         let output = Output()
 
-        // TODO: - map input and use cases to output
+        // map input and use cases to output
+        input.selectPair?
+            .sink(receiveValue: { _ in
+                print("pair was selected")
+                self.navigationDirection = .forward(destination: .pairDetails, style: .push)
+            })
+            .store(in: &cancelBag)
 
         return output
     }
