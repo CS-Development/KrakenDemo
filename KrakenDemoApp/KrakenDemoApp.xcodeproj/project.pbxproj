@@ -22,6 +22,13 @@
 		2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295F27DCB5FC002B4F85 /* TradeView.swift */; };
 		2442296227DCB625002B4F85 /* BalancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296127DCB625002B4F85 /* BalancesView.swift */; };
 		2442296427DCB64E002B4F85 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296327DCB64E002B4F85 /* AccountView.swift */; };
+		2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296527DCB7F4002B4F85 /* Assembler.swift */; };
+		2442296827DCB84D002B4F85 /* KrakenHomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296727DCB84C002B4F85 /* KrakenHomeAssembler.swift */; };
+		2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296927DCB893002B4F85 /* TradeAssembler.swift */; };
+		2442296C27DCB8C1002B4F85 /* BalancesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296B27DCB8C1002B4F85 /* BalancesAssembler.swift */; };
+		2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */; };
+		2442297127DCB925002B4F85 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297027DCB925002B4F85 /* TemplateView.swift */; };
+		2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297227DCB940002B4F85 /* TemplateAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,13 @@
 		2442295F27DCB5FC002B4F85 /* TradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeView.swift; sourceTree = "<group>"; };
 		2442296127DCB625002B4F85 /* BalancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesView.swift; sourceTree = "<group>"; };
 		2442296327DCB64E002B4F85 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		2442296527DCB7F4002B4F85 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		2442296727DCB84C002B4F85 /* KrakenHomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenHomeAssembler.swift; sourceTree = "<group>"; };
+		2442296927DCB893002B4F85 /* TradeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAssembler.swift; sourceTree = "<group>"; };
+		2442296B27DCB8C1002B4F85 /* BalancesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesAssembler.swift; sourceTree = "<group>"; };
+		2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembler.swift; sourceTree = "<group>"; };
+		2442297027DCB925002B4F85 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		2442297227DCB940002B4F85 /* TemplateAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */,
+				2442296527DCB7F4002B4F85 /* Assembler.swift */,
 			);
 			path = CompositionRoot;
 			sourceTree = "<group>";
@@ -243,6 +258,7 @@
 		2442294427DCAC63002B4F85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2442296F27DCB906002B4F85 /* Template */,
 				2442295E27DCB5D3002B4F85 /* Account */,
 				2442295D27DCB5C8002B4F85 /* Balances */,
 				2442295C27DCB5BF002B4F85 /* Trade */,
@@ -329,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				2442291127DCA290002B4F85 /* KrakenHomeView.swift */,
+				2442296727DCB84C002B4F85 /* KrakenHomeAssembler.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -355,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				2442295F27DCB5FC002B4F85 /* TradeView.swift */,
+				2442296927DCB893002B4F85 /* TradeAssembler.swift */,
 			);
 			path = Trade;
 			sourceTree = "<group>";
@@ -363,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				2442296127DCB625002B4F85 /* BalancesView.swift */,
+				2442296B27DCB8C1002B4F85 /* BalancesAssembler.swift */,
 			);
 			path = Balances;
 			sourceTree = "<group>";
@@ -371,8 +390,18 @@
 			isa = PBXGroup;
 			children = (
 				2442296327DCB64E002B4F85 /* AccountView.swift */,
+				2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		2442296F27DCB906002B4F85 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				2442297027DCB925002B4F85 /* TemplateView.swift */,
+				2442297227DCB940002B4F85 /* TemplateAssembler.swift */,
+			);
+			path = Template;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,12 +535,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2442295B27DCB4B7002B4F85 /* View+Ext.swift in Sources */,
+				2442296C27DCB8C1002B4F85 /* BalancesAssembler.swift in Sources */,
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
+				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
 				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
+				2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */,
+				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
+				2442296827DCB84D002B4F85 /* KrakenHomeAssembler.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
+				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
+				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,

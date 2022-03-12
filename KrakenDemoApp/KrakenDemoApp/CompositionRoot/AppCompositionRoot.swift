@@ -9,21 +9,15 @@ import Foundation
 import SwiftUI
 
 final public class AppCompositionRoot {
+    
+    static let assembler: Assembler = DefaultAssembler()
             
     public static var start: some View {
         return TabBar(tabProviders: [
-            TabViewProvider(tabName: "Home", systemImageName: "house", viewProvider: {
-                KrakenHomeView().erased
-            }),
-            TabViewProvider(tabName: "Trade", systemImageName: "arrow.triangle.2.circlepath", viewProvider: {
-                TradeView().erased
-            }),
-            TabViewProvider(tabName: "Balances", systemImageName: "building.columns", viewProvider: {
-                BalancesView().erased
-            }),
-            TabViewProvider(tabName: "Account", systemImageName: "magnifyingglass", viewProvider: {
-                AccountView().erased
-            })
+            assembler.resolve(KrakenHomeTabViewProvider.self),
+            assembler.resolve(TradeTabViewProvider.self),
+            assembler.resolve(BalancesTabViewProvider.self),
+            assembler.resolve(AccountTabViewProvider.self)
         ])
     }
 }
