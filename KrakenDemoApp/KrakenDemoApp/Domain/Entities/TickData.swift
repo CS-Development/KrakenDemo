@@ -7,6 +7,20 @@
 
 import Foundation
 
+struct TickDataStruct: Identifiable {
+    let id = UUID().uuidString
+    let time: Int
+    let open: String
+    let high: String
+    let low: String
+    let close: String
+    let vwap: String
+    let volume: String
+    let count: Int
+}
+
+// MARK: - DTO
+
 public struct TickDataResult: Codable {
     let array: [[TickData]]
     //let last: Int
@@ -39,7 +53,6 @@ public struct TickDataResult: Codable {
                 if pair.stringValue != "last" {
                     temparray = try container.decode([[TickData]].self, forKey: pair)
                 }
-                
             }
             array = temparray
         }

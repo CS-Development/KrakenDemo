@@ -34,6 +34,12 @@ struct PairDetailsView: View {
                 .padding()
                 Spacer()
             }
+            Divider()
+            if !output.array.isEmpty {
+                ForEach(output.array as! [TickDataStruct]) { tickData in
+                    Text(tickData.close)
+                }
+            }
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
     }
