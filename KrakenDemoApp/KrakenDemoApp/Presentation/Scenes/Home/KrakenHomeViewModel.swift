@@ -18,6 +18,7 @@ final class KrakenHomeViewModel: ObservableObject {
     
     // Input
     struct Input {
+        let reloadTrigger: AnyPublisher<Void, Never>
         var selectPair: AnyPublisher<PairCellViewModel, Never>? = nil
     }
     
@@ -61,6 +62,29 @@ final class KrakenHomeViewModel: ObservableObject {
                 
             }
             .store(in: &self.cancelBag)
+        
+        input.reloadTrigger.sink { _ in
+            self.pairsCase.execute()
+                .sink { completion in
+                    // TODO
+                } receiveValue: { pairs in
+                    output.pairs = pairs
+                    for pair in pairs {
+                        self.tickerCase.execute(pairKey: pair.key)
+                            .sink { _ in
+                                
+                            } receiveValue: { tickerDictionary in
+                                output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                                    newTicker
+                                }
+                            }
+                            .store(in: &self.cancelBag)
+                    }
+                    
+                }
+                .store(in: &self.cancelBag)
+        }
+        .store(in: &cancelBag)
         
         input.selectPair?
             .sink(receiveValue: { _ in

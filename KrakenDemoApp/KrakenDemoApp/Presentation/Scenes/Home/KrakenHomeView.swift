@@ -8,29 +8,33 @@
 import SwiftUI
 import Combine
 
-struct ListItem<Key: Hashable , ValueObject: Hashable>: Hashable {
-    let keyObject: Key
-    let valueObject: ValueObject
-}
-
 struct KrakenHomeView: View {
     
+    // MARK: ViewModel output
     @ObservedObject var viewModel: KrakenHomeViewModel
     @ObservedObject var output: KrakenHomeViewModel.Output
     
+    // MARK: Input Drivers
+    private let reload = PassthroughSubject<Void, Never>()
     private let selectPair = PassthroughSubject<PairCellViewModel, Never>()
     
+    // MARK: Init
     init(viewModel: KrakenHomeViewModel) {
-        let input = KrakenHomeViewModel.Input(selectPair: selectPair.eraseToAnyPublisher())
+        let input = KrakenHomeViewModel.Input(
+            reloadTrigger: reload.eraseToAnyPublisher(),
+            selectPair: selectPair.eraseToAnyPublisher()
+        )
         
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
     }
     
+    // MARK: body
     var body: some View {
         
         return NavigationView {
             allPairsList
+            .refreshable { reload.send() }
             .handleNavigation($viewModel.navigationDirection)
             .navigationBarHidden(true)
         }
@@ -38,6 +42,7 @@ struct KrakenHomeView: View {
     
 }
 
+// MARK: subviews
 extension KrakenHomeView {
     private var allPairsList: some View {
         
@@ -66,6 +71,7 @@ extension KrakenHomeView {
     }
 }
 
+// MARK: preview
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        KrakenHomeView(viewModel: KrakenHomeViewModel(pairsCase: LoadTradingAssetPairsUseCase(), tickerCase: LoadTickerUseCase()))

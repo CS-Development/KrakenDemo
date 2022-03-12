@@ -66,6 +66,7 @@
 		244229C027DCF6A0002B4F85 /* ColorStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BD27DCF6A0002B4F85 /* ColorStyleGuide.swift */; };
 		244229C127DCF6A0002B4F85 /* TextGuideStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */; };
 		244229C327DCF70C002B4F85 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C227DCF70C002B4F85 /* Double.swift */; };
+		244229C527DCFC78002B4F85 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C427DCFC78002B4F85 /* ListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		244229BD27DCF6A0002B4F85 /* ColorStyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyleGuide.swift; sourceTree = "<group>"; };
 		244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextGuideStyle.swift; sourceTree = "<group>"; };
 		244229C227DCF70C002B4F85 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		244229C427DCFC78002B4F85 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				2442295927DCB49B002B4F85 /* Extensions */,
+				244229C427DCFC78002B4F85 /* ListItem.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */,
 				2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */,
 				244229C327DCF70C002B4F85 /* Double.swift in Sources */,
+				244229C527DCFC78002B4F85 /* ListItem.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */,
