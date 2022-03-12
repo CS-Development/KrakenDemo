@@ -17,8 +17,11 @@ class NavigationViewFactory {
         switch destination {
         case .home:
             Text("")
-        case .pairDetails:
-            assembler.resolve(PairDetailsView.self)
+        case .pairDetails(let cellVm):
+            if let ticker = cellVm.model.ticker {
+                let model = (pair: cellVm.model.pair, ticker: ticker)
+                assembler.resolve(model: model, PairDetailsView.self)
+            }
         }
     }
 }

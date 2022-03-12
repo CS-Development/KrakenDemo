@@ -8,13 +8,13 @@
 import Foundation
 
 protocol PairDetailsAssembler {
-    func resolve(_ type: PairDetailsView.Type) -> PairDetailsView
+    func resolve(model: (pair: TradingAssetPair, ticker: Ticker), _ type: PairDetailsView.Type) -> PairDetailsView
 }
 
-
 extension PairDetailsAssembler {
-    func resolve(_ type: PairDetailsView.Type) -> PairDetailsView {
-        let viewModel = PairDetailsViewModel()
-        return PairDetailsView(viewModel: viewModel)
+    func resolve(model: (pair: TradingAssetPair, ticker: Ticker), _ type: PairDetailsView.Type) -> PairDetailsView {
+        
+        let vm = PairDetailsViewModel(model: model)
+        return PairDetailsView(viewModel: vm)
     }
 }
