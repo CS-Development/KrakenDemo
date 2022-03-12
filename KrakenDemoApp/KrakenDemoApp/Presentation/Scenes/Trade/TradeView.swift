@@ -10,7 +10,6 @@ import SwiftUI
 struct TradeView: View {
     
     @ObservedObject var viewModel: TradeViewModel
-    @ObservedObject var input: TradeViewModel.Input
     @ObservedObject var output: TradeViewModel.Output
     
     init(viewModel: TradeViewModel) {
@@ -18,7 +17,6 @@ struct TradeView: View {
         
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
-        self.input = input
     }
     
     var body: some View {

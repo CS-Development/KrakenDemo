@@ -13,7 +13,7 @@ final class TemplateViewModel: ObservableObject {
     private var cancelBag = Set<AnyCancellable>()
     
     // Input
-    final class Input: ObservableObject {
+    struct Input {
     }
     
     // Output

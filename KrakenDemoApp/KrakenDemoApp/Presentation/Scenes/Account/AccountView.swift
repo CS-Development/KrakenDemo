@@ -10,7 +10,6 @@ import SwiftUI
 struct AccountView: View {
     
     @ObservedObject var viewModel: AccountViewModel
-    @ObservedObject var input: AccountViewModel.Input
     @ObservedObject var output: AccountViewModel.Output
     
     init(viewModel: AccountViewModel) {
@@ -18,7 +17,6 @@ struct AccountView: View {
         
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
-        self.input = input
     }
     
     var body: some View {
