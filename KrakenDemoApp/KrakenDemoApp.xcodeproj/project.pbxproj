@@ -19,6 +19,9 @@
 		2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295527DCB3AB002B4F85 /* TabBarItem.swift */; };
 		2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295727DCB3D5002B4F85 /* TabViewProvider.swift */; };
 		2442295B27DCB4B7002B4F85 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295A27DCB4B7002B4F85 /* View+Ext.swift */; };
+		2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295F27DCB5FC002B4F85 /* TradeView.swift */; };
+		2442296227DCB625002B4F85 /* BalancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296127DCB625002B4F85 /* BalancesView.swift */; };
+		2442296427DCB64E002B4F85 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296327DCB64E002B4F85 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		2442295527DCB3AB002B4F85 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		2442295727DCB3D5002B4F85 /* TabViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewProvider.swift; sourceTree = "<group>"; };
 		2442295A27DCB4B7002B4F85 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		2442295F27DCB5FC002B4F85 /* TradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeView.swift; sourceTree = "<group>"; };
+		2442296127DCB625002B4F85 /* BalancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesView.swift; sourceTree = "<group>"; };
+		2442296327DCB64E002B4F85 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,9 @@
 		2442294427DCAC63002B4F85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2442295E27DCB5D3002B4F85 /* Account */,
+				2442295D27DCB5C8002B4F85 /* Balances */,
+				2442295C27DCB5BF002B4F85 /* Trade */,
 				2442294F27DCAE58002B4F85 /* Home */,
 			);
 			path = Scenes;
@@ -340,6 +349,30 @@
 				2442295A27DCB4B7002B4F85 /* View+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2442295C27DCB5BF002B4F85 /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				2442295F27DCB5FC002B4F85 /* TradeView.swift */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		2442295D27DCB5C8002B4F85 /* Balances */ = {
+			isa = PBXGroup;
+			children = (
+				2442296127DCB625002B4F85 /* BalancesView.swift */,
+			);
+			path = Balances;
+			sourceTree = "<group>";
+		};
+		2442295E27DCB5D3002B4F85 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2442296327DCB64E002B4F85 /* AccountView.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,7 +509,10 @@
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
+				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
+				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
+				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
 			);

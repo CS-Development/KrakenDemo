@@ -14,6 +14,15 @@ final public class AppCompositionRoot {
         return TabBar(tabProviders: [
             TabViewProvider(tabName: "Home", systemImageName: "house", viewProvider: {
                 KrakenHomeView().erased
+            }),
+            TabViewProvider(tabName: "Trade", systemImageName: "arrow.triangle.2.circlepath", viewProvider: {
+                TradeView().erased
+            }),
+            TabViewProvider(tabName: "Balances", systemImageName: "building.columns", viewProvider: {
+                BalancesView().erased
+            }),
+            TabViewProvider(tabName: "Account", systemImageName: "magnifyingglass", viewProvider: {
+                AccountView().erased
             })
         ])
     }
