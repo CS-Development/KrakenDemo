@@ -15,6 +15,10 @@
 		2442292B27DCA293002B4F85 /* KrakenDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292A27DCA293002B4F85 /* KrakenDemoAppUITests.swift */; };
 		2442292D27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292C27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift */; };
 		2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */; };
+		2442295427DCB37B002B4F85 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295327DCB37B002B4F85 /* TabBar.swift */; };
+		2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295527DCB3AB002B4F85 /* TabBarItem.swift */; };
+		2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295727DCB3D5002B4F85 /* TabViewProvider.swift */; };
+		2442295B27DCB4B7002B4F85 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442295A27DCB4B7002B4F85 /* View+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		2442292A27DCA293002B4F85 /* KrakenDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenDemoAppUITests.swift; sourceTree = "<group>"; };
 		2442292C27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2442295027DCB1D1002B4F85 /* AppCompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompositionRoot.swift; sourceTree = "<group>"; };
+		2442295327DCB37B002B4F85 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2442295527DCB3AB002B4F85 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		2442295727DCB3D5002B4F85 /* TabViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewProvider.swift; sourceTree = "<group>"; };
+		2442295A27DCB4B7002B4F85 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +229,7 @@
 		2442294327DCAC57002B4F85 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2442295227DCB359002B4F85 /* TabBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 		2442294727DCADAA002B4F85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2442295927DCB49B002B4F85 /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -312,6 +322,24 @@
 				2442291127DCA290002B4F85 /* KrakenHomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2442295227DCB359002B4F85 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2442295327DCB37B002B4F85 /* TabBar.swift */,
+				2442295527DCB3AB002B4F85 /* TabBarItem.swift */,
+				2442295727DCB3D5002B4F85 /* TabViewProvider.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2442295927DCB49B002B4F85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2442295A27DCB4B7002B4F85 /* View+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,9 +472,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2442295B27DCB4B7002B4F85 /* View+Ext.swift in Sources */,
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
+				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
+				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
+				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

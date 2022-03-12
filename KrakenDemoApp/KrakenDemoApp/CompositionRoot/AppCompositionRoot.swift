@@ -11,6 +11,10 @@ import SwiftUI
 final public class AppCompositionRoot {
             
     public static var start: some View {
-        return KrakenHomeView()
+        return TabBar(tabProviders: [
+            TabViewProvider(tabName: "Home", systemImageName: "house", viewProvider: {
+                KrakenHomeView().erased
+            })
+        ])
     }
 }
