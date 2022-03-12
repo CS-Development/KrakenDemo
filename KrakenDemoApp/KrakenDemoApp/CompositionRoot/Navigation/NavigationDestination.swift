@@ -9,5 +9,5 @@ import Foundation
 
 enum NavigationDestination {
     case home
-    case pairDetails
+    case pairDetails(cellVm: PairCellViewModel)
 }

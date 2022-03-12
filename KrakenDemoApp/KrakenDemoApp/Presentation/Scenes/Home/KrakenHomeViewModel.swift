@@ -97,9 +97,9 @@ final class KrakenHomeViewModel: ObservableObject {
         .store(in: &cancelBag)
         
         input.selectPair?
-            .sink(receiveValue: { _ in
-                print("pair was selected")
-                self.navigationDirection = .forward(destination: .pairDetails, style: .push)
+            .sink(receiveValue: { cellVm in
+                print("pair \(cellVm.name) was selected")
+                self.navigationDirection = .forward(destination: .pairDetails(cellVm: cellVm), style: .push)
             })
             .store(in: &cancelBag)
 
