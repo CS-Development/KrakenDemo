@@ -18,7 +18,12 @@ extension KrakenHomeAssembler {
         return KrakenHomeTabViewProvider(tabName: "Home",
                      systemImageName: "house") {
             
-            let viewModel = KrakenHomeViewModel()
+            let apiClient = KrakenAPI()//KrakenAPIStub()//KrakenAPI()
+            let repository = KrakenRepository(apiClient: apiClient)
+            let pairsCase = LoadTradingAssetPairsUseCase(krakenRepository: repository)
+            let tickerCase = LoadTickerUseCase(krakenRepository: repository)
+            
+            let viewModel = KrakenHomeViewModel(pairsCase: pairsCase, tickerCase: tickerCase)
             return KrakenHomeView(viewModel: viewModel)
                 .erased
         }
