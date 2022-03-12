@@ -18,7 +18,7 @@ final class KrakenHomeViewModel: ObservableObject {
     
     // Input
     struct Input {
-        var selectPair: AnyPublisher<Void, Never>? = nil
+        var selectPair: AnyPublisher<PairCellViewModel, Never>? = nil
     }
     
     // Output

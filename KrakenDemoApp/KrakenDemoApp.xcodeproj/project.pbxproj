@@ -60,6 +60,12 @@
 		244229B227DCE994002B4F85 /* KrakenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B127DCE993002B4F85 /* KrakenRepositoryTests.swift */; };
 		244229B427DCEDE6002B4F85 /* KrakenAPIStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B327DCEDE6002B4F85 /* KrakenAPIStub.swift */; };
 		244229B627DCEE26002B4F85 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B527DCEE26002B4F85 /* StubData.swift */; };
+		244229BA27DCF64F002B4F85 /* PairCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B827DCF64F002B4F85 /* PairCellView.swift */; };
+		244229BB27DCF64F002B4F85 /* PairCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229B927DCF64F002B4F85 /* PairCellViewModel.swift */; };
+		244229BF27DCF6A0002B4F85 /* ButtonStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BC27DCF6A0002B4F85 /* ButtonStyleGuide.swift */; };
+		244229C027DCF6A0002B4F85 /* ColorStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BD27DCF6A0002B4F85 /* ColorStyleGuide.swift */; };
+		244229C127DCF6A0002B4F85 /* TextGuideStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */; };
+		244229C327DCF70C002B4F85 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C227DCF70C002B4F85 /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +142,12 @@
 		244229B127DCE993002B4F85 /* KrakenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenRepositoryTests.swift; sourceTree = "<group>"; };
 		244229B327DCEDE6002B4F85 /* KrakenAPIStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenAPIStub.swift; sourceTree = "<group>"; };
 		244229B527DCEE26002B4F85 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		244229B827DCF64F002B4F85 /* PairCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairCellView.swift; sourceTree = "<group>"; };
+		244229B927DCF64F002B4F85 /* PairCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairCellViewModel.swift; sourceTree = "<group>"; };
+		244229BC27DCF6A0002B4F85 /* ButtonStyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyleGuide.swift; sourceTree = "<group>"; };
+		244229BD27DCF6A0002B4F85 /* ColorStyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyleGuide.swift; sourceTree = "<group>"; };
+		244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextGuideStyle.swift; sourceTree = "<group>"; };
+		244229C227DCF70C002B4F85 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +365,9 @@
 		2442294627DCADA0002B4F85 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				244229BC27DCF6A0002B4F85 /* ButtonStyleGuide.swift */,
+				244229BD27DCF6A0002B4F85 /* ColorStyleGuide.swift */,
+				244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -427,6 +442,7 @@
 		2442294F27DCAE58002B4F85 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				244229B727DCF60B002B4F85 /* Views */,
 				2442291127DCA290002B4F85 /* KrakenHomeView.swift */,
 				2442297427DCBB29002B4F85 /* KrakenHomeViewModel.swift */,
 				2442296727DCB84C002B4F85 /* KrakenHomeAssembler.swift */,
@@ -522,6 +538,7 @@
 		2442299327DCD348002B4F85 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				244229C227DCF70C002B4F85 /* Double.swift */,
 				2442299427DCD369002B4F85 /* URL-Ext.swift */,
 				2442299627DCD388002B4F85 /* URLSession-Ext.swift */,
 				2442299827DCD3BE002B4F85 /* String+Ext.swift */,
@@ -535,6 +552,15 @@
 				244229A927DCDB2B002B4F85 /* XCTestCase-Ext.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		244229B727DCF60B002B4F85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				244229B827DCF64F002B4F85 /* PairCellView.swift */,
+				244229B927DCF64F002B4F85 /* PairCellViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -689,17 +715,20 @@
 				2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */,
 				2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
+				244229C027DCF6A0002B4F85 /* ColorStyleGuide.swift in Sources */,
 				2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */,
 				2442299B27DCD66C002B4F85 /* TradingAssetPair.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
 				244229A327DCD953002B4F85 /* LoadTradingAssetPairsUseCase.swift in Sources */,
+				244229BF27DCF6A0002B4F85 /* ButtonStyleGuide.swift in Sources */,
 				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
 				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
 				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
 				2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */,
 				2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */,
+				244229C327DCF70C002B4F85 /* Double.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */,
@@ -707,7 +736,10 @@
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
 				244229A527DCD953002B4F85 /* LoadTickerUseCase.swift in Sources */,
 				244229A427DCD953002B4F85 /* LoadOHLCDataUseCase.swift in Sources */,
+				244229BA27DCF64F002B4F85 /* PairCellView.swift in Sources */,
 				2442297527DCBB29002B4F85 /* KrakenHomeViewModel.swift in Sources */,
+				244229BB27DCF64F002B4F85 /* PairCellViewModel.swift in Sources */,
+				244229C127DCF6A0002B4F85 /* TextGuideStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
