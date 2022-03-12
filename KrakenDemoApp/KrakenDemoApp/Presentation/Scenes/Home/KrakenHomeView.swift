@@ -41,8 +41,8 @@ struct KrakenHomeView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        KrakenHomeView(viewModel: KrakenHomeViewModel())
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        KrakenHomeView(viewModel: KrakenHomeViewModel(pairsCase: LoadTradingAssetPairsUseCase(), tickerCase: LoadTickerUseCase()))
+//    }
+//}
