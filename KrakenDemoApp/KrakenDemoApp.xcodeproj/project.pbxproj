@@ -46,6 +46,9 @@
 		2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299427DCD369002B4F85 /* URL-Ext.swift */; };
 		2442299727DCD388002B4F85 /* URLSession-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299627DCD388002B4F85 /* URLSession-Ext.swift */; };
 		2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299827DCD3BE002B4F85 /* String+Ext.swift */; };
+		2442299B27DCD66C002B4F85 /* TradingAssetPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */; };
+		2442299D27DCD697002B4F85 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299C27DCD697002B4F85 /* Ticker.swift */; };
+		2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299E27DCD6BC002B4F85 /* TickData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,9 @@
 		2442299427DCD369002B4F85 /* URL-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL-Ext.swift"; sourceTree = "<group>"; };
 		2442299627DCD388002B4F85 /* URLSession-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession-Ext.swift"; sourceTree = "<group>"; };
 		2442299827DCD3BE002B4F85 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingAssetPair.swift; sourceTree = "<group>"; };
+		2442299C27DCD697002B4F85 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		2442299E27DCD6BC002B4F85 /* TickData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +287,9 @@
 		2442294227DCAC26002B4F85 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */,
+				2442299C27DCD697002B4F85 /* Ticker.swift */,
+				2442299E27DCD6BC002B4F85 /* TickData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
 				2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */,
 				2442299227DCD2FE002B4F85 /* CacheManager.swift in Sources */,
+				2442299D27DCD697002B4F85 /* Ticker.swift in Sources */,
 				2442298427DCC3EB002B4F85 /* PairDetailsAssembler.swift in Sources */,
 				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
@@ -638,7 +648,9 @@
 				2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
 				2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */,
+				2442299B27DCD66C002B4F85 /* TradingAssetPair.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
+				2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
 				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
 				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
