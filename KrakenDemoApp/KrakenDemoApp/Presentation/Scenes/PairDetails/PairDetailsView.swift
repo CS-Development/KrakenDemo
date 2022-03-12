@@ -24,7 +24,31 @@ struct PairDetailsView: View {
     }
     
     var body: some View {
-        Text("Pair \(output.pairName) Details")
+        ScrollView {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 20) {
+                    overviewSection
+                    Spacer()
+                }
+                .padding()
+                Spacer()
+            }
+        }
+        .navigationBarTitle(Text(""), displayMode: .inline)
+    }
+}
+
+extension PairDetailsView {
+    private var overviewSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(output.pairName)
+                .modifier(Header1())
+            Text(output.price)
+            Text(output.priceChange.asPercentString())
+                .foregroundColor(
+                    output.priceChange >= 0 ? Color.theme.green : Color.theme.red
+                )
+        }
     }
 }
 
