@@ -18,7 +18,8 @@ extension BalancesAssembler {
         return BalancesTabViewProvider(tabName: "Balances",
                              systemImageName: "building.columns") {
             
-            return BalancesView()
+            let viewModel = BalancesViewModel()
+            return BalancesView(viewModel: viewModel)
                         .erased
         }
     }

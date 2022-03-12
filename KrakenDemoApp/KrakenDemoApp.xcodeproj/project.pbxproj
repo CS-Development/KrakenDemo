@@ -29,6 +29,11 @@
 		2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */; };
 		2442297127DCB925002B4F85 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297027DCB925002B4F85 /* TemplateView.swift */; };
 		2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297227DCB940002B4F85 /* TemplateAssembler.swift */; };
+		2442297527DCBB29002B4F85 /* KrakenHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297427DCBB29002B4F85 /* KrakenHomeViewModel.swift */; };
+		2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297627DCBBAD002B4F85 /* TemplateViewModel.swift */; };
+		2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297827DCBBE2002B4F85 /* AccountViewModel.swift */; };
+		2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297A27DCBC10002B4F85 /* BalancesViewModel.swift */; };
+		2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442297C27DCBC34002B4F85 /* TradeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembler.swift; sourceTree = "<group>"; };
 		2442297027DCB925002B4F85 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		2442297227DCB940002B4F85 /* TemplateAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAssembler.swift; sourceTree = "<group>"; };
+		2442297427DCBB29002B4F85 /* KrakenHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenHomeViewModel.swift; sourceTree = "<group>"; };
+		2442297627DCBBAD002B4F85 /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
+		2442297827DCBBE2002B4F85 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		2442297A27DCBC10002B4F85 /* BalancesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesViewModel.swift; sourceTree = "<group>"; };
+		2442297C27DCBC34002B4F85 /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				2442291127DCA290002B4F85 /* KrakenHomeView.swift */,
+				2442297427DCBB29002B4F85 /* KrakenHomeViewModel.swift */,
 				2442296727DCB84C002B4F85 /* KrakenHomeAssembler.swift */,
 			);
 			path = Home;
@@ -372,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				2442295F27DCB5FC002B4F85 /* TradeView.swift */,
+				2442297C27DCBC34002B4F85 /* TradeViewModel.swift */,
 				2442296927DCB893002B4F85 /* TradeAssembler.swift */,
 			);
 			path = Trade;
@@ -381,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				2442296127DCB625002B4F85 /* BalancesView.swift */,
+				2442297A27DCBC10002B4F85 /* BalancesViewModel.swift */,
 				2442296B27DCB8C1002B4F85 /* BalancesAssembler.swift */,
 			);
 			path = Balances;
@@ -390,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				2442296327DCB64E002B4F85 /* AccountView.swift */,
+				2442297827DCBBE2002B4F85 /* AccountViewModel.swift */,
 				2442296D27DCB8E8002B4F85 /* AccountAssembler.swift */,
 			);
 			path = Account;
@@ -399,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				2442297027DCB925002B4F85 /* TemplateView.swift */,
+				2442297627DCBBAD002B4F85 /* TemplateViewModel.swift */,
 				2442297227DCB940002B4F85 /* TemplateAssembler.swift */,
 			);
 			path = Template;
@@ -538,8 +553,10 @@
 				2442296C27DCB8C1002B4F85 /* BalancesAssembler.swift in Sources */,
 				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
+				2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */,
 				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
+				2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */,
 				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
 				2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */,
 				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
@@ -548,9 +565,12 @@
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
+				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
+				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442295427DCB37B002B4F85 /* TabBar.swift in Sources */,
+				2442297527DCBB29002B4F85 /* KrakenHomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

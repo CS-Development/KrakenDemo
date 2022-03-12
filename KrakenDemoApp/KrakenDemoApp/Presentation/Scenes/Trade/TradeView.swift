@@ -8,6 +8,19 @@
 import SwiftUI
 
 struct TradeView: View {
+    
+    @ObservedObject var viewModel: TradeViewModel
+    @ObservedObject var input: TradeViewModel.Input
+    @ObservedObject var output: TradeViewModel.Output
+    
+    init(viewModel: TradeViewModel) {
+        let input = TradeViewModel.Input()
+        
+        self.viewModel = viewModel
+        self.output = viewModel.transform(input)
+        self.input = input
+    }
+    
     var body: some View {
         Text("Trade View")
     }
@@ -15,6 +28,6 @@ struct TradeView: View {
 
 struct TradeView_Previews: PreviewProvider {
     static var previews: some View {
-        TradeView()
+        TradeView(viewModel: TradeViewModel())
     }
 }

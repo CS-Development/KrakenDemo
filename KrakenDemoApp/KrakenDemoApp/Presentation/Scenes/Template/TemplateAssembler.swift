@@ -18,7 +18,8 @@ extension TemplateAssembler {
         return TemplateTabViewProvider(tabName: "Template",
                              systemImageName: "magnifyingglass") {
             
-            return TemplateView()
+            let viewModel = TemplateViewModel()
+            return TemplateView(viewModel: viewModel)
                         .erased
         }
     }

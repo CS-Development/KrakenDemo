@@ -18,7 +18,8 @@ extension KrakenHomeAssembler {
         return KrakenHomeTabViewProvider(tabName: "Home",
                      systemImageName: "house") {
             
-            return KrakenHomeView()
+            let viewModel = KrakenHomeViewModel()
+            return KrakenHomeView(viewModel: viewModel)
                 .erased
         }
     }

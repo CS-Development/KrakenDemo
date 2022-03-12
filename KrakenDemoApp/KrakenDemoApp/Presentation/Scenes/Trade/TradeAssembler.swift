@@ -18,7 +18,8 @@ extension TradeAssembler {
         return TradeTabViewProvider(tabName: "Trade",
                              systemImageName: "arrow.triangle.2.circlepath") {
             
-            return TradeView()
+            let viewModel = TradeViewModel()
+            return TradeView(viewModel: viewModel)
                         .erased
         }
     }

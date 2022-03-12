@@ -18,7 +18,8 @@ extension AccountAssembler {
         return AccountTabViewProvider(tabName: "Account",
                              systemImageName: "magnifyingglass") {
             
-            return AccountView()
+            let viewModel = AccountViewModel()
+            return AccountView(viewModel: viewModel)
                         .erased
         }
     }
