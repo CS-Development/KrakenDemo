@@ -28,6 +28,7 @@ struct PairDetailsView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 20) {
                     overviewSection
+                    stats24H_1W
                     Spacer()
                 }
                 .padding()
@@ -39,6 +40,7 @@ struct PairDetailsView: View {
 }
 
 extension PairDetailsView {
+    
     private var overviewSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(output.pairName)
@@ -48,6 +50,40 @@ extension PairDetailsView {
                 .foregroundColor(
                     output.priceChange >= 0 ? Color.theme.green : Color.theme.red
                 )
+        }
+    }
+    
+    private var stats24H_1W: some View {
+        HStack {
+            HiLoVolStatisticView(
+                lowStatModel: StatisticModel(
+                    title: "24H Low",
+                    value: output.price24H_Low
+                ),
+                hiStatModel: StatisticModel(
+                    title: "24H High",
+                    value: output.price24H_High
+                ),
+                volStatModel: StatisticModel(
+                    title: "24H Vol",
+                    value: output.vol24H
+                )
+            )
+            Spacer()
+            HiLoVolStatisticView(
+                lowStatModel: StatisticModel(
+                    title: "1W Low",
+                    value: output.price1W_Low
+                ),
+                hiStatModel: StatisticModel(
+                    title: "1W High",
+                    value: output.price1W_High
+                ),
+                volStatModel: StatisticModel(
+                    title: "1W Avg Vol",
+                    value: output.avgVol1W
+                )
+            )
         }
     }
 }
