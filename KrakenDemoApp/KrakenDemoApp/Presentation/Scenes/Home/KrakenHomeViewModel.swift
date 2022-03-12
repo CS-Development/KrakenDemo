@@ -14,15 +14,22 @@ final class KrakenHomeViewModel: ObservableObject {
     
     public let pairsCase: LoadTradingAssetPairsUseCaseType
     public let tickerCase: LoadTickerUseCaseType
+    
+    private let timer = Timer.publish(
+            every: 60, tolerance: 0.5,
+            on: .main, in: .common
+        )
+        .autoconnect()
+        .merge(with: Just(Date()))
     private var cancelBag = Set<AnyCancellable>()
     
-    // Input
+    // MARK: -  Input
     struct Input {
         let reloadTrigger: AnyPublisher<Void, Never>
         var selectPair: AnyPublisher<PairCellViewModel, Never>? = nil
     }
     
-    // Output
+    // MARK: -  Output
     final class Output: ObservableObject {
         @Published public var pairs: [String : TradingAssetPair] = [:]
         @Published public var tickers: [String : Ticker] = [:]
@@ -43,25 +50,28 @@ final class KrakenHomeViewModel: ObservableObject {
 
         // map input and use cases to output
         
-        self.pairsCase.execute()
-            .sink { completion in
-                // TODO
-            } receiveValue: { pairs in
-                output.pairs = pairs
-                for pair in pairs {
-                    self.tickerCase.execute(pairKey: pair.key)
-                        .sink { _ in
-                            
-                        } receiveValue: { tickerDictionary in
-                            output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                                newTicker
+        timer.sink { _ in
+            self.pairsCase.execute()
+                .sink { completion in
+                    // TODO
+                } receiveValue: { pairs in
+                    output.pairs = pairs
+                    for pair in pairs {
+                        self.tickerCase.execute(pairKey: pair.key)
+                            .sink { _ in
+                                
+                            } receiveValue: { tickerDictionary in
+                                output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                                    newTicker
+                                }
                             }
-                        }
-                        .store(in: &self.cancelBag)
+                            .store(in: &self.cancelBag)
+                    }
+                    
                 }
-                
-            }
-            .store(in: &self.cancelBag)
+                .store(in: &self.cancelBag)
+        }
+        .store(in: &cancelBag)
         
         input.reloadTrigger.sink { _ in
             self.pairsCase.execute()
