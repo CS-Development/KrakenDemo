@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442290F27DCA290002B4F85 /* KrakenDemoAppApp.swift */; };
-		2442291227DCA290002B4F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442291127DCA290002B4F85 /* ContentView.swift */; };
+		2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442291127DCA290002B4F85 /* KrakenHomeView.swift */; };
 		2442291427DCA292002B4F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2442291327DCA292002B4F85 /* Assets.xcassets */; };
 		2442291727DCA292002B4F85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2442291627DCA292002B4F85 /* Preview Assets.xcassets */; };
 		2442292127DCA293002B4F85 /* KrakenDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442292027DCA293002B4F85 /* KrakenDemoAppTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		2442290C27DCA290002B4F85 /* KrakenDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrakenDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2442290F27DCA290002B4F85 /* KrakenDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenDemoAppApp.swift; sourceTree = "<group>"; };
-		2442291127DCA290002B4F85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2442291127DCA290002B4F85 /* KrakenHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenHomeView.swift; sourceTree = "<group>"; };
 		2442291327DCA292002B4F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2442291627DCA292002B4F85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2442291C27DCA293002B4F85 /* KrakenDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KrakenDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,8 +94,12 @@
 		2442290E27DCA290002B4F85 /* KrakenDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				2442293927DCAB43002B4F85 /* Utils */,
+				2442293A27DCAB50002B4F85 /* Data */,
+				2442293D27DCAB7C002B4F85 /* Domain */,
+				2442293C27DCAB70002B4F85 /* Presentation */,
+				2442293B27DCAB60002B4F85 /* CompositionRoot */,
 				2442290F27DCA290002B4F85 /* KrakenDemoAppApp.swift */,
-				2442291127DCA290002B4F85 /* ContentView.swift */,
 				2442291327DCA292002B4F85 /* Assets.xcassets */,
 				2442291527DCA292002B4F85 /* Preview Content */,
 			);
@@ -113,6 +117,10 @@
 		2442291F27DCA293002B4F85 /* KrakenDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				2442294827DCADCD002B4F85 /* Utils */,
+				2442294B27DCADF3002B4F85 /* Data */,
+				2442294A27DCADE8002B4F85 /* Domain */,
+				2442294927DCADDB002B4F85 /* Presentation */,
 				2442292027DCA293002B4F85 /* KrakenDemoAppTests.swift */,
 			);
 			path = KrakenDemoAppTests;
@@ -125,6 +133,182 @@
 				2442292C27DCA293002B4F85 /* KrakenDemoAppUITestsLaunchTests.swift */,
 			);
 			path = KrakenDemoAppUITests;
+			sourceTree = "<group>";
+		};
+		2442293927DCAB43002B4F85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2442293A27DCAB50002B4F85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2442293E27DCABD6002B4F85 /* DataService */,
+				2442294027DCABF8002B4F85 /* API */,
+				2442293F27DCABE9002B4F85 /* Gateways */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2442293B27DCAB60002B4F85 /* CompositionRoot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CompositionRoot;
+			sourceTree = "<group>";
+		};
+		2442293C27DCAB70002B4F85 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2442294727DCADAA002B4F85 /* Utils */,
+				2442294627DCADA0002B4F85 /* Style */,
+				2442294527DCAD95002B4F85 /* Navigation */,
+				2442294427DCAC63002B4F85 /* Scenes */,
+				2442294327DCAC57002B4F85 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2442293D27DCAB7C002B4F85 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2442294227DCAC26002B4F85 /* Entities */,
+				2442294127DCAC19002B4F85 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2442293E27DCABD6002B4F85 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		2442293F27DCABE9002B4F85 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		2442294027DCABF8002B4F85 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2442294127DCAC19002B4F85 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2442294227DCAC26002B4F85 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2442294327DCAC57002B4F85 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2442294427DCAC63002B4F85 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2442294F27DCAE58002B4F85 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2442294527DCAD95002B4F85 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2442294627DCADA0002B4F85 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		2442294727DCADAA002B4F85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2442294827DCADCD002B4F85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2442294927DCADDB002B4F85 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2442294A27DCADE8002B4F85 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2442294C27DCAE0A002B4F85 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2442294B27DCADF3002B4F85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2442294E27DCAE26002B4F85 /* API */,
+				2442294D27DCAE18002B4F85 /* Gateways */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2442294C27DCAE0A002B4F85 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2442294D27DCAE18002B4F85 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		2442294E27DCAE26002B4F85 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2442294F27DCAE58002B4F85 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2442291127DCA290002B4F85 /* KrakenHomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2442291227DCA290002B4F85 /* ContentView.swift in Sources */,
+				2442291227DCA290002B4F85 /* KrakenHomeView.swift in Sources */,
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
