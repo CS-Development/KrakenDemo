@@ -41,6 +41,7 @@
 		2442298827DCC509002B4F85 /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298727DCC509002B4F85 /* NavigationHandler.swift */; };
 		2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298927DCC538002B4F85 /* NavigationDestination.swift */; };
 		2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */; };
+		2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298E27DCD134002B4F85 /* KrakenAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		2442298727DCC509002B4F85 /* NavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHandler.swift; sourceTree = "<group>"; };
 		2442298927DCC538002B4F85 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewFactory.swift; sourceTree = "<group>"; };
+		2442298E27DCD134002B4F85 /* KrakenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		2442294027DCABF8002B4F85 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				2442298E27DCD134002B4F85 /* KrakenAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
 				2442296827DCB84D002B4F85 /* KrakenHomeAssembler.swift in Sources */,
 				2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */,
+				2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
