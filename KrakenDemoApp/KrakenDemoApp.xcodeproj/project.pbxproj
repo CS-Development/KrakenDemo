@@ -42,6 +42,10 @@
 		2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298927DCC538002B4F85 /* NavigationDestination.swift */; };
 		2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */; };
 		2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442298E27DCD134002B4F85 /* KrakenAPI.swift */; };
+		2442299227DCD2FE002B4F85 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299127DCD2FE002B4F85 /* CacheManager.swift */; };
+		2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299427DCD369002B4F85 /* URL-Ext.swift */; };
+		2442299727DCD388002B4F85 /* URLSession-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299627DCD388002B4F85 /* URLSession-Ext.swift */; };
+		2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442299827DCD3BE002B4F85 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		2442298927DCC538002B4F85 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		2442298B27DCC581002B4F85 /* NavigationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewFactory.swift; sourceTree = "<group>"; };
 		2442298E27DCD134002B4F85 /* KrakenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenAPI.swift; sourceTree = "<group>"; };
+		2442299127DCD2FE002B4F85 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		2442299427DCD369002B4F85 /* URL-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL-Ext.swift"; sourceTree = "<group>"; };
+		2442299627DCD388002B4F85 /* URLSession-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession-Ext.swift"; sourceTree = "<group>"; };
+		2442299827DCD3BE002B4F85 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +202,8 @@
 		2442293927DCAB43002B4F85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2442299327DCD348002B4F85 /* Extensions */,
+				2442299027DCD2E2002B4F85 /* Caching */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -459,6 +469,24 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		2442299027DCD2E2002B4F85 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				2442299127DCD2FE002B4F85 /* CacheManager.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		2442299327DCD348002B4F85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2442299427DCD369002B4F85 /* URL-Ext.swift */,
+				2442299627DCD388002B4F85 /* URLSession-Ext.swift */,
+				2442299827DCD3BE002B4F85 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -596,10 +624,12 @@
 				2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */,
 				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
+				2442299727DCD388002B4F85 /* URLSession-Ext.swift in Sources */,
 				2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */,
 				2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */,
 				2442296427DCB64E002B4F85 /* AccountView.swift in Sources */,
 				2442296E27DCB8E8002B4F85 /* AccountAssembler.swift in Sources */,
+				2442299227DCD2FE002B4F85 /* CacheManager.swift in Sources */,
 				2442298427DCC3EB002B4F85 /* PairDetailsAssembler.swift in Sources */,
 				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
@@ -607,12 +637,14 @@
 				2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */,
 				2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
+				2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442297327DCB940002B4F85 /* TemplateAssembler.swift in Sources */,
 				2442297727DCBBAD002B4F85 /* TemplateViewModel.swift in Sources */,
 				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
 				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
 				2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */,
+				2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */,
 				2442296227DCB625002B4F85 /* BalancesView.swift in Sources */,
 				2442295127DCB1D1002B4F85 /* AppCompositionRoot.swift in Sources */,
 				2442298C27DCC581002B4F85 /* NavigationViewFactory.swift in Sources */,
