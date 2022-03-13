@@ -74,6 +74,10 @@
 		244229D027DD2E6F002B4F85 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CF27DD2E6F002B4F85 /* ChartView.swift */; };
 		244229D227DD2EE1002B4F85 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229D127DD2EE1002B4F85 /* Date.swift */; };
 		2465398227DEAA8300A4DB7B /* LoadTradingAssetPairsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398127DEAA8300A4DB7B /* LoadTradingAssetPairsUseCaseTests.swift */; };
+		2465398627DEAB9B00A4DB7B /* KrakenHomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398527DEAB9B00A4DB7B /* KrakenHomeViewModelTests.swift */; };
+		2465398827DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398727DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift */; };
+		2465398A27DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398927DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift */; };
+		2465398C27DEB30500A4DB7B /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398B27DEB30500A4DB7B /* TestError.swift */; };
 		24ECF3F827DDE215009366B9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F727DDE215009366B9 /* SearchBarView.swift */; };
 		24ECF3FA27DDE270009366B9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F927DDE270009366B9 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
@@ -166,6 +170,10 @@
 		244229CF27DD2E6F002B4F85 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		244229D127DD2EE1002B4F85 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		2465398127DEAA8300A4DB7B /* LoadTradingAssetPairsUseCaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTradingAssetPairsUseCaseTests.swift; sourceTree = "<group>"; };
+		2465398527DEAB9B00A4DB7B /* KrakenHomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrakenHomeViewModelTests.swift; sourceTree = "<group>"; };
+		2465398727DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTradingAssetPairsUseCaseMock.swift; sourceTree = "<group>"; };
+		2465398927DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTickerUseCaseMock.swift; sourceTree = "<group>"; };
+		2465398B27DEB30500A4DB7B /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		24ECF3F727DDE215009366B9 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		24ECF3F927DDE270009366B9 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -414,6 +422,7 @@
 		2442294927DCADDB002B4F85 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2465398327DEAB4400A4DB7B /* Scenes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -578,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				244229A927DCDB2B002B4F85 /* XCTestCase-Ext.swift */,
+				2465398B27DEB30500A4DB7B /* TestError.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -599,6 +609,24 @@
 				244229C827DD081D002B4F85 /* StatisticView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2465398327DEAB4400A4DB7B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2465398427DEAB5400A4DB7B /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2465398427DEAB5400A4DB7B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2465398727DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift */,
+				2465398927DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift */,
+				2465398527DEAB9B00A4DB7B /* KrakenHomeViewModelTests.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		24ECF3F627DDE215009366B9 /* SearchBar */ = {
@@ -807,10 +835,14 @@
 				244229B027DCE724002B4F85 /* KrakenRepositoryStub.swift in Sources */,
 				244229AC27DCDB87002B4F85 /* KrakenAPIMock.swift in Sources */,
 				244229AA27DCDB2B002B4F85 /* XCTestCase-Ext.swift in Sources */,
+				2465398627DEAB9B00A4DB7B /* KrakenHomeViewModelTests.swift in Sources */,
 				2442292127DCA293002B4F85 /* KrakenDemoAppTests.swift in Sources */,
+				2465398C27DEB30500A4DB7B /* TestError.swift in Sources */,
 				244229AE27DCDDF0002B4F85 /* KrakenRepositoryMock.swift in Sources */,
 				244229B227DCE994002B4F85 /* KrakenRepositoryTests.swift in Sources */,
+				2465398827DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift in Sources */,
 				2465398227DEAA8300A4DB7B /* LoadTradingAssetPairsUseCaseTests.swift in Sources */,
+				2465398A27DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
