@@ -67,6 +67,12 @@
 		244229C127DCF6A0002B4F85 /* TextGuideStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */; };
 		244229C327DCF70C002B4F85 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C227DCF70C002B4F85 /* Double.swift */; };
 		244229C527DCFC78002B4F85 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C427DCFC78002B4F85 /* ListItem.swift */; };
+		244229C927DD081D002B4F85 /* HiLoVolStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C727DD081D002B4F85 /* HiLoVolStatisticView.swift */; };
+		244229CA27DD081D002B4F85 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229C827DD081D002B4F85 /* StatisticView.swift */; };
+		244229CC27DD085F002B4F85 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CB27DD085F002B4F85 /* StatisticModel.swift */; };
+		244229CE27DD08B1002B4F85 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CD27DD08B1002B4F85 /* PreviewProvider.swift */; };
+		244229D027DD2E6F002B4F85 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CF27DD2E6F002B4F85 /* ChartView.swift */; };
+		244229D227DD2EE1002B4F85 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229D127DD2EE1002B4F85 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +156,12 @@
 		244229BE27DCF6A0002B4F85 /* TextGuideStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextGuideStyle.swift; sourceTree = "<group>"; };
 		244229C227DCF70C002B4F85 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		244229C427DCFC78002B4F85 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		244229C727DD081D002B4F85 /* HiLoVolStatisticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiLoVolStatisticView.swift; sourceTree = "<group>"; };
+		244229C827DD081D002B4F85 /* StatisticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		244229CB27DD085F002B4F85 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		244229CD27DD08B1002B4F85 /* PreviewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		244229CF27DD2E6F002B4F85 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		244229D127DD2EE1002B4F85 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +342,7 @@
 				2442299A27DCD66C002B4F85 /* TradingAssetPair.swift */,
 				2442299C27DCD697002B4F85 /* Ticker.swift */,
 				2442299E27DCD6BC002B4F85 /* TickData.swift */,
+				244229CB27DD085F002B4F85 /* StatisticModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -466,6 +479,7 @@
 		2442295927DCB49B002B4F85 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				244229CD27DD08B1002B4F85 /* PreviewProvider.swift */,
 				2442295A27DCB4B7002B4F85 /* View+Ext.swift */,
 			);
 			path = Extensions;
@@ -514,6 +528,7 @@
 		2442297E27DCC385002B4F85 /* PairDetails */ = {
 			isa = PBXGroup;
 			children = (
+				244229C627DD07F6002B4F85 /* Views */,
 				2442297F27DCC3C0002B4F85 /* PairDetailsView.swift */,
 				2442298127DCC3D5002B4F85 /* PairDetailsViewModel.swift */,
 				2442298327DCC3EB002B4F85 /* PairDetailsAssembler.swift */,
@@ -541,6 +556,7 @@
 		2442299327DCD348002B4F85 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				244229D127DD2EE1002B4F85 /* Date.swift */,
 				244229C227DCF70C002B4F85 /* Double.swift */,
 				2442299427DCD369002B4F85 /* URL-Ext.swift */,
 				2442299627DCD388002B4F85 /* URLSession-Ext.swift */,
@@ -562,6 +578,16 @@
 			children = (
 				244229B827DCF64F002B4F85 /* PairCellView.swift */,
 				244229B927DCF64F002B4F85 /* PairCellViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		244229C627DD07F6002B4F85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				244229CF27DD2E6F002B4F85 /* ChartView.swift */,
+				244229C727DD081D002B4F85 /* HiLoVolStatisticView.swift */,
+				244229C827DD081D002B4F85 /* StatisticView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -712,14 +738,20 @@
 				2442299227DCD2FE002B4F85 /* CacheManager.swift in Sources */,
 				2442299D27DCD697002B4F85 /* Ticker.swift in Sources */,
 				2442298427DCC3EB002B4F85 /* PairDetailsAssembler.swift in Sources */,
+				244229D027DD2E6F002B4F85 /* ChartView.swift in Sources */,
 				2442296627DCB7F4002B4F85 /* Assembler.swift in Sources */,
 				2442295827DCB3D5002B4F85 /* TabViewProvider.swift in Sources */,
 				2442296827DCB84D002B4F85 /* KrakenHomeAssembler.swift in Sources */,
+				244229CC27DD085F002B4F85 /* StatisticModel.swift in Sources */,
 				2442298027DCC3C0002B4F85 /* PairDetailsView.swift in Sources */,
 				2442298F27DCD134002B4F85 /* KrakenAPI.swift in Sources */,
+				244229CA27DD081D002B4F85 /* StatisticView.swift in Sources */,
 				2442296027DCB5FC002B4F85 /* TradeView.swift in Sources */,
+				244229D227DD2EE1002B4F85 /* Date.swift in Sources */,
 				244229C027DCF6A0002B4F85 /* ColorStyleGuide.swift in Sources */,
+				244229CE27DD08B1002B4F85 /* PreviewProvider.swift in Sources */,
 				2442299927DCD3BE002B4F85 /* String+Ext.swift in Sources */,
+				244229C927DD081D002B4F85 /* HiLoVolStatisticView.swift in Sources */,
 				2442299B27DCD66C002B4F85 /* TradingAssetPair.swift in Sources */,
 				2442296A27DCB893002B4F85 /* TradeAssembler.swift in Sources */,
 				2442299F27DCD6BC002B4F85 /* TickData.swift in Sources */,

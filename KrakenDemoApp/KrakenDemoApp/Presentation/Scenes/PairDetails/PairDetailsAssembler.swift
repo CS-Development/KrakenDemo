@@ -14,7 +14,11 @@ protocol PairDetailsAssembler {
 extension PairDetailsAssembler {
     func resolve(model: (pair: TradingAssetPair, ticker: Ticker), _ type: PairDetailsView.Type) -> PairDetailsView {
         
-        let vm = PairDetailsViewModel(model: model)
+        let apiClient = KrakenAPI()
+        let repository = KrakenRepository(apiClient: apiClient)
+        let ohlcCase = LoadOHLCDataUseCase(krakenRepository: repository)
+        
+        let vm = PairDetailsViewModel(model: model, ohlcCase: ohlcCase)
         return PairDetailsView(viewModel: vm)
     }
 }
