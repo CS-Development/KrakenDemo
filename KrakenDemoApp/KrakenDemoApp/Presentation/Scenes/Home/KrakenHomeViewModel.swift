@@ -12,6 +12,8 @@ final class KrakenHomeViewModel: ObservableObject {
 
     @Published var navigationDirection: NavigationDirection?
     @Published var searchText: String = ""
+    @Published var sortOption: SortOption = .name
+    @Published var isLoading: Bool = false
     
     public let pairsCase: LoadTradingAssetPairsUseCaseType
     public let tickerCase: LoadTickerUseCaseType
@@ -24,6 +26,10 @@ final class KrakenHomeViewModel: ObservableObject {
         .autoconnect()
         //.merge(with: Just(Date()))
     private var cancelBag = Set<AnyCancellable>()
+    
+    enum SortOption {
+        case name, nameReversed, volume, volumeReversed, price, priceReversed
+    }
     
     // MARK: -  Input
     struct Input {

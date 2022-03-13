@@ -35,6 +35,7 @@ struct KrakenHomeView: View {
         return NavigationView {
             VStack {
                 SearchBarView(searchText: $viewModel.searchText)
+                sortingBar
                 allPairsList
                     .onAppear {
                         print("reset selected pair")
@@ -76,6 +77,54 @@ extension KrakenHomeView {
             }
         }
         //.listStyle(PlainListStyle())
+    }
+    
+    private var sortingBar: some View {
+        HStack {
+            HStack(spacing: 4) {
+                Text("Pair")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .name || viewModel.sortOption == .nameReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .name ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .name ? .nameReversed : .name
+                }
+            }
+            
+            Spacer()
+            
+            HStack(spacing: 4) {
+                Text("Volume")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .volume || viewModel.sortOption == .volumeReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .volume ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .volume ? .volumeReversed : .volume
+                }
+            }
+            
+            Spacer()
+
+            HStack(spacing: 4) {
+                Text("Price")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .price || viewModel.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .price ? 0 : 180))
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .price ? .priceReversed : .price
+                }
+            }
+        }
+        .font(.caption)
+        .foregroundColor(Color.theme.secondaryText)
+        .padding(.horizontal)
     }
 }
 
