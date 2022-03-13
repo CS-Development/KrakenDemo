@@ -15,10 +15,12 @@ final class PairDetailsViewModel: ObservableObject {
     private let model: (pair: TradingAssetPair, ticker: Ticker)
     
     private let ohlcCase: LoadOHLCDataUseCaseType
+    private var outputReference: Output!
     
     // Input
     struct Input {
         let loader: AnyPublisher<Void, Never>
+        let fetcher: AnyPublisher<Void, Never>
     }
     
     // Output
@@ -43,10 +45,13 @@ final class PairDetailsViewModel: ObservableObject {
         
         // Graph values
         @Published var array = []
+        @Published var arrayDataReady = false
         // Balances values
         
         // recent trades
     }
+    
+    
     
     // MARK: - Init
     
@@ -62,46 +67,13 @@ final class PairDetailsViewModel: ObservableObject {
         let model = input.loader.map { self.model }
         
         let output = Output()
-
+        outputReference = output
         // map input and use cases to output
-        
-        // ohlc
-        ohlcCase.execute(pairKey: self.model.pair.altname)
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            } receiveValue: { result in
-                print(result)
-                
-                output.array = result.array.map({ tickData in
-                    
-                    guard case .integer(let timeValue) = tickData[0] else { fatalError() }
-                    guard case .string(let openValue) = tickData[1] else { fatalError() }
-                    guard case .string(let highValue) = tickData[2] else { fatalError() }
-                    guard case .string(let lowValue) = tickData[3] else { fatalError() }
-                    guard case .string(let closeValue) = tickData[4] else { fatalError() }
-                    guard case .string(let vwapValue) = tickData[5] else { fatalError() }
-                    guard case .string(let volumeValue) = tickData[6] else { fatalError() }
-                    guard case .integer(let countValue) = tickData[7] else { fatalError() }
-                    
-                    return TickDataStruct(
-                        time: timeValue,
-                        open: openValue,
-                        high: highValue,
-                        low: lowValue,
-                        close: closeValue,
-                        vwap: vwapValue,
-                        volume: volumeValue,
-                        count: countValue)
-                })
-                print(output.array)
-            }
-            .store(in: &self.cancelBag)
-        
+        input.fetcher.sink { [output] _ in
+            self.fetchGraphValues(output: output)
+        }
+        .store(in: &self.cancelBag)
+
         model
             .map { $0.pair.wsname ?? "-" }
             .assign(to: \.pairName, on: output)
@@ -164,5 +136,43 @@ final class PairDetailsViewModel: ObservableObject {
             .store(in: &cancelBag)
         
         return output
+    }
+    
+    private func fetchGraphValues(output: Output) {
+        self.ohlcCase.execute(pairKey: self.model.pair.altname)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            } receiveValue: { result in
+                print(result)
+                
+                output.array = result.array.map { tickData in
+                    
+                    guard case .integer(let timeValue) = tickData[0] else { fatalError() }
+                    guard case .string(let openValue) = tickData[1] else { fatalError() }
+                    guard case .string(let highValue) = tickData[2] else { fatalError() }
+                    guard case .string(let lowValue) = tickData[3] else { fatalError() }
+                    guard case .string(let closeValue) = tickData[4] else { fatalError() }
+                    guard case .string(let vwapValue) = tickData[5] else { fatalError() }
+                    guard case .string(let volumeValue) = tickData[6] else { fatalError() }
+                    guard case .integer(let countValue) = tickData[7] else { fatalError() }
+                    
+                    return TickDataStruct(
+                        time: timeValue,
+                        open: openValue,
+                        high: highValue,
+                        low: lowValue,
+                        close: closeValue,
+                        vwap: vwapValue,
+                        volume: volumeValue,
+                        count: countValue)
+                }
+                output.arrayDataReady = true
+            }
+            .store(in: &self.cancelBag)
     }
 }

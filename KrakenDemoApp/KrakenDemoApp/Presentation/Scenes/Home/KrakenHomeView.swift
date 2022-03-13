@@ -38,7 +38,7 @@ struct KrakenHomeView: View {
                 sortingBar
                 allPairsList
                     .onAppear {
-                        print("reset selected pair")
+                        // reset selected pair
                         viewModel.selectedPair = nil
                     }
                 .refreshable { reload.send() }
@@ -66,7 +66,7 @@ extension KrakenHomeView {
                PairCellView(viewModel: cellViewModel)
             }
         }
-        //.listStyle(PlainListStyle())
+        .listStyle(PlainListStyle())
     }
     
     private var sortingBar: some View {
