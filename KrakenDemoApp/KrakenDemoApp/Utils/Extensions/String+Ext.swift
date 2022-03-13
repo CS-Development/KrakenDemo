@@ -19,3 +19,10 @@ extension String {
         return String(data: data, encoding: .utf8)
     }
 }
+
+extension String {
+    internal func alphaNumeric() -> String {
+        let pattern = "[^A-Za-z0-9]+"
+        return self.replacingOccurrences(of: pattern, with: "", options: [.regularExpression])
+    }
+}

@@ -11,6 +11,7 @@ import Combine
 final class KrakenHomeViewModel: ObservableObject {
 
     @Published var navigationDirection: NavigationDirection?
+    @Published var searchText: String = ""
     
     public let pairsCase: LoadTradingAssetPairsUseCaseType
     public let tickerCase: LoadTickerUseCaseType
@@ -32,6 +33,7 @@ final class KrakenHomeViewModel: ObservableObject {
     
     // MARK: -  Output
     final class Output: ObservableObject {
+        @Published public var sourcePairs: [String : TradingAssetPair] = [:]
         @Published public var pairs: [String : TradingAssetPair] = [:]
         @Published public var tickers: [String : Ticker] = [:]
     }
@@ -49,11 +51,21 @@ final class KrakenHomeViewModel: ObservableObject {
         
         let output = Output()
 
+        $searchText
+            .combineLatest(output.$sourcePairs)
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(filterPairs)
+            .sink { pairs in
+                output.pairs = pairs
+            }
+            .store(in: &cancelBag)
+        
         // map input and use cases to output
         self.pairsCase.execute()
             .sink { completion in
                 // TODO
             } receiveValue: { pairs in
+                output.sourcePairs = pairs
                 output.pairs = pairs
                 self.refreshTickers(output: output)
             }
@@ -103,6 +115,18 @@ final class KrakenHomeViewModel: ObservableObject {
                     }
                     .store(in: &self.cancelBag)
             }
+        }
+    }
+    
+    private func filterPairs(text: String, pairs: [String : TradingAssetPair]) -> [String : TradingAssetPair] {
+        guard !text.isEmpty else {
+            return pairs
+        }
+        
+        let lowercasedText = text.alphaNumeric().lowercased()
+        
+        return pairs.filter { (pair) -> Bool in
+            return pair.key.lowercased().contains(lowercasedText)
         }
     }
 }

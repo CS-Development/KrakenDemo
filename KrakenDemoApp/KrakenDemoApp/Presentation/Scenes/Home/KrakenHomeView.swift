@@ -33,14 +33,17 @@ struct KrakenHomeView: View {
     var body: some View {
         
         return NavigationView {
-            allPairsList
-                .onAppear {
-                    print("reset selected pair")
-                    viewModel.selectedPair = nil
-                }
-            .refreshable { reload.send() }
-            .handleNavigation($viewModel.navigationDirection)
-            .navigationBarHidden(true)
+            VStack {
+                SearchBarView(searchText: $viewModel.searchText)
+                allPairsList
+                    .onAppear {
+                        print("reset selected pair")
+                        viewModel.selectedPair = nil
+                    }
+                .refreshable { reload.send() }
+                .handleNavigation($viewModel.navigationDirection)
+                .navigationBarHidden(true)
+            }
         }
         
     }
