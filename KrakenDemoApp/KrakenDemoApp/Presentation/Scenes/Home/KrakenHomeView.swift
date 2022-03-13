@@ -55,19 +55,9 @@ struct KrakenHomeView: View {
 extension KrakenHomeView {
     private var allPairsList: some View {
         
-        let pairs = output.pairs
         let tickers = output.tickers
-        var myList = [ListItem<String, TradingAssetPair>]()
-        for key in pairs.keys.sorted() {
-            myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
-        }
         
-        var myTickers = [ListItem<String, Ticker>]()
-        for key in tickers.keys.sorted() {
-            myTickers.append(ListItem(keyObject: key, valueObject: tickers[key]!))
-        }
-        
-        return List(myList, id: \.self) { listItem in
+        return List(output.myList, id: \.self) { listItem in
             let ticker: Ticker? = tickers[listItem.keyObject]
             let cellViewModel = PairCellViewModel(model: (listItem.valueObject, ticker))
             Button(action: {
