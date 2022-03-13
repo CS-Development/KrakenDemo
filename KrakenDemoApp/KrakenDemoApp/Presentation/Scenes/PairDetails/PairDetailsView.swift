@@ -12,12 +12,16 @@ struct PairDetailsView: View {
     
     private var cancelBag = Set<AnyCancellable>()
     private let loader = PassthroughSubject<Void, Never>()
+    private let fetcher = PassthroughSubject<Void, Never>()
     
     @ObservedObject var viewModel: PairDetailsViewModel
     @ObservedObject var output: PairDetailsViewModel.Output
     
     init(viewModel: PairDetailsViewModel) {
-        let input = PairDetailsViewModel.Input(loader: loader.eraseToAnyPublisher())
+        let input = PairDetailsViewModel.Input(
+            loader: loader.eraseToAnyPublisher(),
+            fetcher: fetcher.eraseToAnyPublisher()
+        )
         self.viewModel = viewModel
         self.output = viewModel.transform(input)
         loader.send(())
@@ -34,16 +38,25 @@ struct PairDetailsView: View {
                 .padding()
                 Spacer()
             }
+            
             Divider()
+            
+            Button {
+                fetcher.send(())
+            } label: {
+                Text("Show Graph")
+            }
+            .modifier(DefaultButton())
+            .padding()
+            
+
             if !output.array.isEmpty {
-//                ForEach(output.array as! [TickDataStruct]) { tickData in
-//                    Text(tickData.close)
-//                }
                 ChartView(tickDatas: output.array as! [TickDataStruct])
                     .padding(.vertical)
             }
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
+
     }
 }
 
