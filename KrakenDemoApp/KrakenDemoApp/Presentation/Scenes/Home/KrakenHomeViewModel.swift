@@ -55,60 +55,17 @@ final class KrakenHomeViewModel: ObservableObject {
                 // TODO
             } receiveValue: { pairs in
                 output.pairs = pairs
-                for pair in pairs {
-                    self.tickerCase.execute(pairKey: pair.key)
-                        .sink { _ in
-                            
-                        } receiveValue: { tickerDictionary in
-                            output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                                newTicker
-                            }
-                        }
-                        .store(in: &self.cancelBag)
-                }
-                
+                self.refreshTickers(output: output)
             }
             .store(in: &self.cancelBag)
         
         timer.sink { _ in
-            if self.selectedPair != nil {
-                self.tickerCase.execute(pairKey: self.selectedPair!)
-                    .sink { _ in
-                        
-                    } receiveValue: { tickerDictionary in
-                        output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                            newTicker
-                        }
-                    }
-                    .store(in: &self.cancelBag)
-            } else {
-                for pair in output.pairs {
-                    self.tickerCase.execute(pairKey: pair.key)
-                        .sink { _ in
-                            
-                        } receiveValue: { tickerDictionary in
-                            output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                                newTicker
-                            }
-                        }
-                        .store(in: &self.cancelBag)
-                }
-            }
+            self.refreshTickers(output: output)
         }
         .store(in: &cancelBag)
         
         input.reloadTrigger.sink { _ in
-            for pair in output.pairs {
-                self.tickerCase.execute(pairKey: pair.key)
-                    .sink { _ in
-                        
-                    } receiveValue: { tickerDictionary in
-                        output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                            newTicker
-                        }
-                    }
-                    .store(in: &self.cancelBag)
-            }
+            self.refreshTickers(output: output)
         }
         .store(in: &cancelBag)
         
@@ -121,5 +78,31 @@ final class KrakenHomeViewModel: ObservableObject {
             .store(in: &cancelBag)
 
         return output
+    }
+    
+    private func refreshTickers(output: Output) {
+        if self.selectedPair != nil {
+            self.tickerCase.execute(pairKey: self.selectedPair!)
+                .sink { _ in
+                    
+                } receiveValue: { tickerDictionary in
+                    output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                        newTicker
+                    }
+                }
+                .store(in: &self.cancelBag)
+        } else {
+            for pair in output.pairs {
+                self.tickerCase.execute(pairKey: pair.key)
+                    .sink { _ in
+                        
+                    } receiveValue: { tickerDictionary in
+                        output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
+                            newTicker
+                        }
+                    }
+                    .store(in: &self.cancelBag)
+            }
+        }
     }
 }
