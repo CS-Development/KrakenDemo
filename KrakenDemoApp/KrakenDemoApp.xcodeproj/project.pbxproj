@@ -73,6 +73,8 @@
 		244229CE27DD08B1002B4F85 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CD27DD08B1002B4F85 /* PreviewProvider.swift */; };
 		244229D027DD2E6F002B4F85 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229CF27DD2E6F002B4F85 /* ChartView.swift */; };
 		244229D227DD2EE1002B4F85 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244229D127DD2EE1002B4F85 /* Date.swift */; };
+		24ECF3F827DDE215009366B9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F727DDE215009366B9 /* SearchBarView.swift */; };
+		24ECF3FA27DDE270009366B9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F927DDE270009366B9 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,8 @@
 		244229CD27DD08B1002B4F85 /* PreviewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		244229CF27DD2E6F002B4F85 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		244229D127DD2EE1002B4F85 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		24ECF3F727DDE215009366B9 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		24ECF3F927DDE270009366B9 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +354,7 @@
 		2442294327DCAC57002B4F85 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				24ECF3F627DDE215009366B9 /* SearchBar */,
 				2442295227DCB359002B4F85 /* TabBar */,
 			);
 			path = Components;
@@ -556,6 +561,7 @@
 		2442299327DCD348002B4F85 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				24ECF3F927DDE270009366B9 /* UIApplication.swift */,
 				244229D127DD2EE1002B4F85 /* Date.swift */,
 				244229C227DCF70C002B4F85 /* Double.swift */,
 				2442299427DCD369002B4F85 /* URL-Ext.swift */,
@@ -590,6 +596,14 @@
 				244229C827DD081D002B4F85 /* StatisticView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		24ECF3F627DDE215009366B9 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				24ECF3F727DDE215009366B9 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -730,6 +744,7 @@
 				2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */,
 				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
+				24ECF3FA27DDE270009366B9 /* UIApplication.swift in Sources */,
 				2442299727DCD388002B4F85 /* URLSession-Ext.swift in Sources */,
 				2442297927DCBBE2002B4F85 /* AccountViewModel.swift in Sources */,
 				2442298A27DCC538002B4F85 /* NavigationDestination.swift in Sources */,
@@ -762,6 +777,7 @@
 				2442298627DCC4E5002B4F85 /* NavigationDirection.swift in Sources */,
 				2442297D27DCBC34002B4F85 /* TradeViewModel.swift in Sources */,
 				2442298227DCC3D5002B4F85 /* PairDetailsViewModel.swift in Sources */,
+				24ECF3F827DDE215009366B9 /* SearchBarView.swift in Sources */,
 				2442299527DCD369002B4F85 /* URL-Ext.swift in Sources */,
 				244229C327DCF70C002B4F85 /* Double.swift in Sources */,
 				244229C527DCFC78002B4F85 /* ListItem.swift in Sources */,

@@ -33,14 +33,18 @@ struct KrakenHomeView: View {
     var body: some View {
         
         return NavigationView {
-            allPairsList
-                .onAppear {
-                    print("reset selected pair")
-                    viewModel.selectedPair = nil
-                }
-            .refreshable { reload.send() }
-            .handleNavigation($viewModel.navigationDirection)
-            .navigationBarHidden(true)
+            VStack {
+                SearchBarView(searchText: $viewModel.searchText)
+                sortingBar
+                allPairsList
+                    .onAppear {
+                        print("reset selected pair")
+                        viewModel.selectedPair = nil
+                    }
+                .refreshable { reload.send() }
+                .handleNavigation($viewModel.navigationDirection)
+                .navigationBarHidden(true)
+            }
         }
         
     }
@@ -51,19 +55,9 @@ struct KrakenHomeView: View {
 extension KrakenHomeView {
     private var allPairsList: some View {
         
-        let pairs = output.pairs
         let tickers = output.tickers
-        var myList = [ListItem<String, TradingAssetPair>]()
-        for key in pairs.keys.sorted() {
-            myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
-        }
         
-        var myTickers = [ListItem<String, Ticker>]()
-        for key in tickers.keys.sorted() {
-            myTickers.append(ListItem(keyObject: key, valueObject: tickers[key]!))
-        }
-        
-        return List(myList, id: \.self) { listItem in
+        return List(output.myList, id: \.self) { listItem in
             let ticker: Ticker? = tickers[listItem.keyObject]
             let cellViewModel = PairCellViewModel(model: (listItem.valueObject, ticker))
             Button(action: {
@@ -73,6 +67,54 @@ extension KrakenHomeView {
             }
         }
         //.listStyle(PlainListStyle())
+    }
+    
+    private var sortingBar: some View {
+        HStack {
+            HStack(spacing: 4) {
+                Text("Pair")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .name || viewModel.sortOption == .nameReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .name ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .name ? .nameReversed : .name
+                }
+            }
+            
+            Spacer()
+            
+            HStack(spacing: 4) {
+                Text("Volume")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .volume || viewModel.sortOption == .volumeReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .volume ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .volume ? .volumeReversed : .volume
+                }
+            }
+            
+            Spacer()
+
+            HStack(spacing: 4) {
+                Text("Price")
+                Image(systemName: "chevron.down")
+                    .opacity( (viewModel.sortOption == .price || viewModel.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: viewModel.sortOption == .price ? 0 : 180))
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    viewModel.sortOption = viewModel.sortOption == .price ? .priceReversed : .price
+                }
+            }
+        }
+        .font(.caption)
+        .foregroundColor(Color.theme.secondaryText)
+        .padding(.horizontal)
     }
 }
 
