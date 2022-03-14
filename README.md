@@ -9,7 +9,7 @@ A Take-Home assignment that makes use of Kraken's public apis.
 - [Architecture](Docs/Architecture/000_Architecture.md)
 - [Project Walkthrough ](Docs/Walkthrough/000_Walkthrough.md)
 - [Caching](Docs/Caching/000_Caching.md)
-- [](#)
+- [Final Considerations](Docs/Considerations/000_FinalConsiderations.md)
 
 
 
