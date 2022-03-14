@@ -12,5 +12,5 @@
 * Reactive programming using Combine
 * UI layer implemented using SwiftUI
 
-<sub>[**back**](../../Readme.md)</sub>
+<sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>
 

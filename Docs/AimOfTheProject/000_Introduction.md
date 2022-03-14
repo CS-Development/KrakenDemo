@@ -16,5 +16,5 @@ Second but not less important goal is to show off the usage of :
 - reactive programming (Combine)
 - latest Apple's UI Framework (SwiftUI)
 
-<sub>[**back**](../../Readme.md)</sub>
+<sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>
 
