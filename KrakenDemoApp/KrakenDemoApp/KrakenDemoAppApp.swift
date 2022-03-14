@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct KrakenDemoAppApp: App {
+    
+    @State private var showLaunchView: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            AppCompositionRoot.start
+            ZStack {
+                AppCompositionRoot.start
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLaunchView: $showLaunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(2.0)
+            }
         }
     }
 }

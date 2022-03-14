@@ -78,6 +78,8 @@
 		2465398827DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398727DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift */; };
 		2465398A27DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398927DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift */; };
 		2465398C27DEB30500A4DB7B /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398B27DEB30500A4DB7B /* TestError.swift */; };
+		2465399027DEBA9100A4DB7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2465398E27DEBA9100A4DB7B /* LaunchScreen.storyboard */; };
+		2465399127DEBA9100A4DB7B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465398F27DEBA9100A4DB7B /* LaunchView.swift */; };
 		24ECF3F827DDE215009366B9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F727DDE215009366B9 /* SearchBarView.swift */; };
 		24ECF3FA27DDE270009366B9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECF3F927DDE270009366B9 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
@@ -174,6 +176,8 @@
 		2465398727DEAD1400A4DB7B /* LoadTradingAssetPairsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTradingAssetPairsUseCaseMock.swift; sourceTree = "<group>"; };
 		2465398927DEAFDB00A4DB7B /* LoadTickerUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTickerUseCaseMock.swift; sourceTree = "<group>"; };
 		2465398B27DEB30500A4DB7B /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		2465398E27DEBA9100A4DB7B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2465398F27DEBA9100A4DB7B /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		24ECF3F727DDE215009366B9 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		24ECF3F927DDE270009366B9 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -373,6 +377,7 @@
 		2442294427DCAC63002B4F85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2465398D27DEBA5900A4DB7B /* Launch */,
 				2442296F27DCB906002B4F85 /* Template */,
 				2442295E27DCB5D3002B4F85 /* Account */,
 				2442295D27DCB5C8002B4F85 /* Balances */,
@@ -629,6 +634,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		2465398D27DEBA5900A4DB7B /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				2465398E27DEBA9100A4DB7B /* LaunchScreen.storyboard */,
+				2465398F27DEBA9100A4DB7B /* LaunchView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		24ECF3F627DDE215009366B9 /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +755,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2465399027DEBA9100A4DB7B /* LaunchScreen.storyboard in Resources */,
 				2442291727DCA292002B4F85 /* Preview Assets.xcassets in Resources */,
 				2442291427DCA292002B4F85 /* Assets.xcassets in Resources */,
 			);
@@ -774,6 +789,7 @@
 				2442291027DCA290002B4F85 /* KrakenDemoAppApp.swift in Sources */,
 				2442297B27DCBC10002B4F85 /* BalancesViewModel.swift in Sources */,
 				2442297127DCB925002B4F85 /* TemplateView.swift in Sources */,
+				2465399127DEBA9100A4DB7B /* LaunchView.swift in Sources */,
 				2442295627DCB3AB002B4F85 /* TabBarItem.swift in Sources */,
 				24ECF3FA27DDE270009366B9 /* UIApplication.swift in Sources */,
 				2442299727DCD388002B4F85 /* URLSession-Ext.swift in Sources */,
