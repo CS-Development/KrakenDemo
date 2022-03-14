@@ -7,6 +7,8 @@ A Take-Home assignment that makes use of Kraken's public apis.
 - [Features](Docs/Features/000_Features.md)
 - [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
 - [Architecture](Docs/Architecture/000_Architecture.md)
+- [Project Walkthrough ](Docs/Walkthrough /000_Walkthrough.md)
+- [Caching](Docs/Caching/000_Caching.md)
 - [](#)
 
 

@@ -28,7 +28,7 @@ Despite of the State management provided by @EnvironmentObject and all connected
 
 ![](./reduxFlow.gif)
 
-- 
+
 
 With this architecture being setup, a possible workflow for implementing loosely coupled features in the modulare architecture would be as the following:
 
