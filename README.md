@@ -34,7 +34,7 @@ A Take-Home assignment that makes use of Kraken's public apis.
 
 ## Prerequisites
 
-The project is a simple Xcode project and makes use only of standard Apple's frameworks, therefore no previous installation of any other frameworks or packages dependencies is required.
+The project is a simple Xcode project and makes use of standard Apple's frameworks only, therefore no previous installation of any other frameworks or packages dependencies is required.
 
 ## Getting Started
 
