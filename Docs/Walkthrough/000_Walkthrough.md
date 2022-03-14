@@ -16,3 +16,7 @@ The assembler creates and injects all the dependencies for the scene:
 - finally returns the created view object
 
 The view model setups the presentation logic by running the redux "transform" method that configures the "output" dependencies from the "input" triggered events.
+
+
+
+<sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>

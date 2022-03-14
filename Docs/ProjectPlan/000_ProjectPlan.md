@@ -17,5 +17,5 @@ More tasks could be defined in order to improve/evolve the project:
 - Write Integration Tests and Acceptance Tests
 - Design CI/CD processes
 
-<sub>[**back**](../../Readme.md)</sub>
+<sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>
 

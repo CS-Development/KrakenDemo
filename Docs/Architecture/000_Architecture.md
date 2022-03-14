@@ -56,5 +56,5 @@ With this architecture being setup, a possible workflow for implementing loosely
 - Implement Composition
   - Define DI Container, assembler/factories..
 
-<sub>[**back**](../../Readme.md)</sub>
+<sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>
 
