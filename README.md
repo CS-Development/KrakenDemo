@@ -5,11 +5,13 @@ A Take-Home assignment that makes use of Kraken's public apis.
 
 - [Aim of the project](Docs/AimOfTheProject/000_Introduction.md)
 - [Features](Docs/Features/000_Features.md)
+- [Feature Specifications](Docs/Features/001_FeatureSpecs.md)
 - [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
 - [Architecture](Docs/Architecture/000_Architecture.md)
 - [Project Walkthrough ](Docs/Walkthrough/000_Walkthrough.md)
 - [Caching](Docs/Caching/000_Caching.md)
-- [](#)
+- [Unit Testing](Docs/Testing/000_UnitTesting.md)
+- [Final Considerations](Docs/Considerations/000_FinalConsiderations.md)
 
 
 
@@ -34,7 +36,7 @@ A Take-Home assignment that makes use of Kraken's public apis.
 
 ## Prerequisites
 
-The project is a simple Xcode project and makes use only of standard Apple's frameworks, therefore no previous installation of any other frameworks or packages dependencies is required.
+The project is a simple Xcode project and makes use of standard Apple's frameworks only, therefore no previous installation of any other frameworks or packages dependencies is required.
 
 ## Getting Started
 

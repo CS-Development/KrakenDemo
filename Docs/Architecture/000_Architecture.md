@@ -33,19 +33,14 @@ Despite of the State management provided by @EnvironmentObject and all connected
 With this architecture being setup, a possible workflow for implementing loosely coupled features in the modulare architecture would be as the following:
 
 - Implement Data layer
-
 - - API
   - Model
   - Repository gateways
-
 - Define Use Cases
-
 - - Entities
   - Business Logic Rules
-
 - Implement Presentation Layer
-
-- - Define Tabs and Navigation
+  - Define Tabs and Navigation
   - Define UI Style
   - Define Scenes/Features
     - Instanciate multiple „MVVM Input/Output + Redux transform“ Template
@@ -55,6 +50,12 @@ With this architecture being setup, a possible workflow for implementing loosely
 
 - Implement Composition
   - Define DI Container, assembler/factories..
+
+
+
+## App Architecture
+
+![](./ArchitectureDiagram.drawio.png)
 
 <sub>[**back**](https://github.com/CS-Development/KrakenDemo)</sub>
 
