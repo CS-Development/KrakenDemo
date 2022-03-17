@@ -143,21 +143,33 @@ final class KrakenHomeViewModel: ObservableObject {
             let pairs = pairs
             //let tickers = output.tickers
             var myList = [ListItem<String, TradingAssetPair>]()
-            for key in pairs.keys.sorted(by: { key1, key2 in
-                key1 < key2
-            }) {
-                myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
+            
+            let sorted = pairs.sorted {
+                return $0.value.altname < $1.value.altname
             }
+
+            for element in sorted {
+                if(pairs[element.key] != nil) {
+                    myList.append(ListItem(keyObject: element.key, valueObject: pairs[element.key]!))
+                }
+            }
+            
             output.myList = myList
         case .nameReversed:
             let pairs = pairs
             //let tickers = output.tickers
             var myList = [ListItem<String, TradingAssetPair>]()
-            for key in pairs.keys.sorted(by: { key1, key2 in
-                key1 > key2
-            }) {
-                myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
+
+            let sorted = pairs.sorted {
+                return $0.value.altname > $1.value.altname
             }
+            
+            for element in sorted {
+                if(pairs[element.key] != nil) {
+                    myList.append(ListItem(keyObject: element.key, valueObject: pairs[element.key]!))
+                }
+            }
+            
             output.myList = myList
         case .price:
             let pairs = pairs
