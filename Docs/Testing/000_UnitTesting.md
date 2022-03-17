@@ -58,18 +58,18 @@ Example:
 
 In order to test our KrakenRepository we create an instance of it passing a mocked or stubbed version of the KrakenAPI
 
+```swift
 sut = KrakenRepository(apiClient: mockApiClient)
+```
 
 we call then the method we want to test and we look if we get an answer
 
+```swift
 _ = sut
+			.getTradableAssetsPairs()
+			.sink(receiveCompletion: { response in
+					XCTAssertNotNil(response)
+					expectation.fulfill()
+			})
+```
 
-​      .getTradableAssetsPairs()
-
-​      .sink(receiveCompletion: { _ **in** }) { response **in**
-
-​        XCTAssertNotNil(response)
-
-​        expectation.fulfill()
-
-​      }

@@ -27,58 +27,46 @@ In such a case an elegant solition is to use a mix of the **Repository** and of 
 
 With the Repository pattern we have basically a single interface, the Repository gateway. Then we have to concrete implementations, a remote repository and a local repository, that are conforming to the same interface. In this way the client doesn't know where the data are coming from, they can be either from one or the other.
 
+```swift
 protocol RepositoryType {
-
-​	func fetchData() -> Publisher<Data, Error>
-
+		func fetchData() -> Publisher<Data, Error>
 }
 
 class RemoteRepository: ReposityType {
-
-​	func fetchData() -> Publisher<Data, Error> {
-
-​			// return a publisher of remote fetched Data
-
-​	}
-
+		func fetchData() -> Publisher<Data, Error> {
+				// return a publisher of remote fetched Data
+		}
 }
 
 class LocalRepository: ReposityType {
-	var cache: Data
-
-​	func fetchData() -> Publisher<Data, Error> {
-
-​			// return a publisher of local fetched Data
-
-​	}
-
+		var cache: Data
+		
+		func fetchData() -> Publisher<Data, Error> {
+				// return a publisher of local fetched Data
+		}
 }
+```
 
 #### Composition pattern
 
 With the Composition pattern we can combine the two repository and decide the strategy to use. For example, loading first from remote and from local only if the remote fails.
 
+```swift
 class RemoteThanLocal: ReposityType {
+		let local: LocalRepository
+		let remote: RemoteRepository
 
-​	let local: LocalRepository
-​	let remote: RemoteRepository
-
-​	func fetchData() -> Publisher<Data, Error> {
-
-​			return Publishers.Concatenate(
-​					prefix: remote.fetchData()
-
-​							.handleEvents(receiveOutput: {
-
-​								self.local.cache = data
-
-​							}),
-​					suffix: local.fetchData()
-​			).eraseToAnyPublisher()
-
-​	}
-
+		func fetchData() -> Publisher<Data, Error> {
+				return Publishers.Concatenate(
+						prefix: remote.fetchData()
+          			.handleEvents(receiveOutput: { self.local.cache = data }),
+          	suffix: local.fetchData()
+				).eraseToAnyPublisher()
+		}
 }
+```
+
+
 
 
 

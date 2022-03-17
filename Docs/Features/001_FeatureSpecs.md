@@ -94,9 +94,7 @@ Given the user doesn't have connectivity
 
 
 
-## Flowchart
-
-### 
+## Flowchart 
 
 ![](./Flow.drawio.png)
 

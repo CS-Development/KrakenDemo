@@ -11,6 +11,7 @@ What went good:
 
 What went wrong:
 
+- skipping the intermediary DTO
 - a little bit of fighting between: 
   - trying to adher as much as possible to the clean architecture principles
   - use the SwiftUI state management property wrappers 
