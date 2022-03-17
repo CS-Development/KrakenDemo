@@ -5,6 +5,7 @@ A Take-Home assignment that makes use of Kraken's public apis.
 
 - [Aim of the project](Docs/AimOfTheProject/000_Introduction.md)
 - [Features](Docs/Features/000_Features.md)
+- [Feature Specifications](Docs/Features/001_FeatureSpecs.md)
 - [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
 - [Architecture](Docs/Architecture/000_Architecture.md)
 - [Project Walkthrough ](Docs/Walkthrough/000_Walkthrough.md)
