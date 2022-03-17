@@ -18,6 +18,7 @@ final class KrakenHomeViewModel: ObservableObject {
     public let pairsCase: LoadTradingAssetPairsUseCaseType
     public let tickerCase: LoadTickerUseCaseType
     public var selectedPair: String? = nil
+    public var selectedPairModel: TradingAssetPair? = nil
     
     private let timer = Timer.publish(
             every: 60, tolerance: 0.5,
@@ -93,6 +94,7 @@ final class KrakenHomeViewModel: ObservableObject {
         input.selectPair?
             .sink(receiveValue: { cellVm in
                 self.selectedPair = cellVm.name
+                self.selectedPairModel = cellVm.model.pair
                 print("pair \(cellVm.name) was selected")
                 self.navigationDirection = .forward(destination: .pairDetails(cellVm: cellVm), style: .push)
             })
@@ -108,7 +110,9 @@ final class KrakenHomeViewModel: ObservableObject {
                     
                 } receiveValue: { tickerDictionary in
                     output.tickers.merge(tickerDictionary) { oldTicker, newTicker in
-                        newTicker
+                        
+                        self.navigationDirection = .forward(destination: .pairDetails(cellVm: PairCellViewModel(model: (pair: self.selectedPairModel!, ticker: newTicker))), style: .push)
+                        return newTicker
                     }
                 }
                 .store(in: &self.cancelBag)
@@ -139,21 +143,33 @@ final class KrakenHomeViewModel: ObservableObject {
             let pairs = pairs
             //let tickers = output.tickers
             var myList = [ListItem<String, TradingAssetPair>]()
-            for key in pairs.keys.sorted(by: { key1, key2 in
-                key1 < key2
-            }) {
-                myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
+            
+            let sorted = pairs.sorted {
+                return $0.value.altname < $1.value.altname
             }
+
+            for element in sorted {
+                if(pairs[element.key] != nil) {
+                    myList.append(ListItem(keyObject: element.key, valueObject: pairs[element.key]!))
+                }
+            }
+            
             output.myList = myList
         case .nameReversed:
             let pairs = pairs
             //let tickers = output.tickers
             var myList = [ListItem<String, TradingAssetPair>]()
-            for key in pairs.keys.sorted(by: { key1, key2 in
-                key1 > key2
-            }) {
-                myList.append(ListItem(keyObject: key, valueObject: pairs[key]!))
+
+            let sorted = pairs.sorted {
+                return $0.value.altname > $1.value.altname
             }
+            
+            for element in sorted {
+                if(pairs[element.key] != nil) {
+                    myList.append(ListItem(keyObject: element.key, valueObject: pairs[element.key]!))
+                }
+            }
+            
             output.myList = myList
         case .price:
             let pairs = pairs
